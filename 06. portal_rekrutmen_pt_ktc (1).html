@@ -1,0 +1,2682 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portal Karir & Rekrutmen Operasional | PT KTC Coal Mining & Energy</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Google Font: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            coal: {
+              950: '#090D16',
+              900: '#0F172A',
+              800: '#1E293B',
+              700: '#334155'
+            },
+            amber: {
+              450: '#FBBF24',
+              550: '#EAB308'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #F8FAFC;
+    }
+    
+    dialog::backdrop {
+      background: rgba(15, 23, 42, 0.75);
+      backdrop-filter: blur(4px);
+    }
+    
+    dialog[open] {
+      animation: zoomIn 0.2s ease-out forwards;
+    }
+
+    @keyframes zoomIn {
+      from {
+        opacity: 0;
+        transform: scale(0.96) translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+      }
+    }
+
+    .industrial-pattern {
+      background-color: #0b1120;
+      background-image: radial-gradient(rgba(245, 158, 11, 0.12) 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
+
+    .amber-glow {
+      box-shadow: 0 4px 24px -2px rgba(245, 158, 11, 0.3);
+    }
+
+    .input-focus-ring:focus {
+      outline: none;
+      border-color: #F59E0B;
+      box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.15);
+    }
+
+    .drag-over {
+      border-color: #F59E0B !important;
+      background-color: #FEF3C7 !important;
+    }
+
+    /* Animasi Efek Buka Kunci Dropzone CV */
+    @keyframes unlockGlow {
+      0% {
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.6);
+        border-color: #10B981;
+      }
+      50% {
+        box-shadow: 0 0 0 12px rgba(16, 185, 129, 0);
+        border-color: #059669;
+      }
+      100% {
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+      }
+    }
+
+    .unlock-animated {
+      animation: unlockGlow 0.8s ease-out forwards;
+    }
+
+    /* Efek transisi halus pembukaan form */
+    .locked-section {
+      transition: all 0.35s ease-in-out;
+    }
+  </style>
+</head>
+<body class="text-slate-800 antialiased min-h-screen flex flex-col justify-between selection:bg-amber-500 selection:text-slate-950">
+
+  <!-- Header Perusahaan -->
+  <header class="bg-coal-950 border-b-4 border-amber-500 text-white shadow-xl sticky top-0 z-40">
+    <div class="max-w-7xl mx-auto px-4 py-3.5 sm:px-6 lg:px-8 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+      <div>
+        <div class="flex items-center gap-2">
+          <h1 class="text-lg sm:text-xl font-black tracking-tight text-white uppercase">
+            PT KTC <span class="text-amber-400">Coal Mining & Energy</span>
+          </h1>
+          <span class="hidden sm:inline-block px-2 py-0.5 rounded text-[10px] font-bold bg-amber-500/20 text-amber-300 border border-amber-500/40">OFFICIAL PORTAL</span>
+        </div>
+        <p class="text-xs text-slate-300 font-medium">
+          Mining Operation, Plant & Support &bull; Site Operations Recruitment System
+        </p>
+      </div>
+      
+      <div class="flex items-center flex-wrap gap-2.5">
+        <a href="#formLamar" class="px-4 py-2 rounded-xl text-xs font-black bg-amber-500 hover:bg-amber-400 text-slate-950 transition flex items-center gap-2 shadow-sm">
+          <i class="fa-solid fa-file-signature"></i> Isi Formulir Lamaran
+        </a>
+        <div class="inline-flex items-center gap-2 px-3 py-2 rounded-xl text-xs font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> 26 Posisi Siap Dilamar
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Banner Keaslian & Anti Pungli -->
+  <div class="bg-gradient-to-r from-amber-500 via-amber-400 to-amber-500 text-slate-950 text-xs sm:text-sm font-bold py-2 px-4 shadow-sm">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-center gap-2 text-center">
+      <span class="inline-flex items-center gap-1.5 bg-black/15 px-2.5 py-0.5 rounded-full text-xs font-black">
+        <i class="fa-solid fa-shield-halved"></i> BEBAS BIAYA (100% GRATIS)
+      </span>
+      <span>Proses seleksi PT KTC tidak pernah memungut biaya apa pun &bull; Penempatan Kerja: <strong>Muara Teweh, Barito Utara, Kalimantan Tengah</strong>.</span>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="industrial-pattern text-white py-12 px-4 sm:px-6 lg:px-8 border-b border-slate-800">
+    <div class="max-w-7xl mx-auto flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
+      <div class="max-w-2xl space-y-3">
+        <div class="inline-flex items-center gap-2 py-1 px-3.5 rounded-full text-xs font-bold tracking-wider uppercase bg-amber-500/15 text-amber-300 border border-amber-500/30">
+          <i class="fa-solid fa-hard-hat text-amber-400"></i> Divisi Operasional & Pemeliharaan Alat Berat
+        </div>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-white leading-tight">
+          Pendaftaran <span class="text-amber-400">Tenaga Ahli & Operasional Tambang</span>
+        </h2>
+        <p class="text-slate-300 text-sm sm:base leading-relaxed">
+          Kirimkan berkas lamaran resmi Anda secara terpusat untuk armada alat berat, perawatan mekanik, dan logistik pendukung penambangan batu bara PT KTC Coal Mining & Energy.
+        </p>
+      </div>
+
+      <!-- Quick Metrics Cards -->
+      <div class="grid grid-cols-3 gap-3 w-full lg:w-auto">
+        <div class="bg-coal-900/90 backdrop-blur border border-slate-700/80 p-4 rounded-2xl text-center shadow-lg">
+          <div class="text-amber-400 text-2xl sm:text-3xl font-black">26</div>
+          <div class="text-[11px] text-slate-300 font-semibold mt-0.5">Posisi Tersedia</div>
+        </div>
+        <div class="bg-coal-900/90 backdrop-blur border border-slate-700/80 p-4 rounded-2xl text-center shadow-lg">
+          <div class="text-amber-400 text-base sm:text-lg font-black leading-tight pt-1">Laki-laki / Perempuan</div>
+          <div class="text-[11px] text-slate-300 font-semibold mt-0.5">Prioritas Laki-laki</div>
+        </div>
+        <div class="bg-coal-900/90 backdrop-blur border border-slate-700/80 p-4 rounded-2xl text-center shadow-lg">
+          <div class="text-amber-400 text-2xl sm:text-3xl font-black"><i class="fa-solid fa-location-dot"></i></div>
+          <div class="text-[11px] text-slate-300 font-semibold mt-0.5">Muara Teweh</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Container Utama -->
+  <main class="max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8 space-y-10 flex-1 w-full">
+
+    <!-- Fasilitas Site Tambang -->
+    <section class="bg-white rounded-3xl border border-slate-200/80 shadow-sm p-6">
+      <div class="flex items-center justify-between pb-3 border-b border-slate-100 mb-4">
+        <div>
+          <h3 class="text-xs font-black text-amber-600 uppercase tracking-widest flex items-center gap-2">
+            <i class="fa-solid fa-circle-check"></i> Fasilitas Karyawan Ditanggung Penuh
+          </h3>
+          <p class="text-sm font-bold text-slate-800 mt-0.5">Disediakan oleh perusahaan selama bertugas di Site Muara Teweh:</p>
+        </div>
+        <span class="text-xs font-bold text-slate-400 hidden sm:inline-block">Standar Fasilitas Operasional</span>
+      </div>
+      
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <div class="flex items-center gap-4 bg-slate-50 p-4 rounded-2xl border border-slate-200/80 hover:bg-slate-100/70 transition">
+          <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center text-xl flex-shrink-0">
+            <i class="fa-solid fa-house-chimney-window"></i>
+          </div>
+          <div>
+            <p class="text-xs text-slate-500 font-semibold">Akomodasi Site</p>
+            <p class="text-sm font-black text-slate-900">Mess Karyawan (AC & Kasur)</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-4 bg-slate-50 p-4 rounded-2xl border border-slate-200/80 hover:bg-slate-100/70 transition">
+          <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center text-xl flex-shrink-0">
+            <i class="fa-solid fa-utensils"></i>
+          </div>
+          <div>
+            <p class="text-xs text-slate-500 font-semibold">Konsumsi Penuh</p>
+            <p class="text-sm font-black text-slate-900">Makan 3x Sehari (Catering Higienis)</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-4 bg-slate-50 p-4 rounded-2xl border border-slate-200/80 hover:bg-slate-100/70 transition">
+          <div class="w-12 h-12 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center text-xl flex-shrink-0">
+            <i class="fa-solid fa-shirt"></i>
+          </div>
+          <div>
+            <p class="text-xs text-slate-500 font-semibold">Perawatan Pakaian</p>
+            <p class="text-sm font-black text-slate-900">Layanan Laundry Gratis</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bilah Pencarian & Filter Interaktif -->
+    <div class="space-y-4">
+      <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-4">
+        <div>
+          <span class="text-xs font-black text-amber-600 uppercase tracking-widest">Katalog Karir Aktif</span>
+          <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mt-1">Daftar Lowongan Pekerjaan</h2>
+          <p class="text-xs sm:text-sm text-slate-500">Gunakan bilah pencarian atau tab kategori untuk menemukan posisi yang sesuai keahlian Anda.</p>
+        </div>
+        
+        <!-- Live Search Box -->
+        <div class="relative w-full lg:w-80">
+          <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-sm"></i>
+          <input type="text" id="liveSearchInput" oninput="applyFilters()" placeholder="Cari posisi (cth: ZX870, Welder, ADT)..." class="input-focus-ring w-full pl-10 pr-9 py-2.5 bg-white border border-slate-300 rounded-xl text-sm font-medium transition shadow-xs">
+          <button type="button" id="clearSearchBtn" onclick="clearSearch()" class="hidden absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-700 text-xs">
+            <i class="fa-solid fa-circle-xmark"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Filter Tabs -->
+      <div class="flex flex-wrap items-center gap-1.5 p-1.5 bg-slate-200/80 rounded-2xl text-xs font-bold w-fit">
+        <button onclick="setCategory('all')" id="btn-all" class="px-3.5 py-2 rounded-xl bg-white text-slate-900 shadow-sm transition">Semua (26)</button>
+        <button onclick="setCategory('operator')" id="btn-operator" class="px-3.5 py-2 rounded-xl text-slate-600 hover:text-slate-900 transition">Operator & Driver (13)</button>
+        <button onclick="setCategory('mechanic')" id="btn-mechanic" class="px-3.5 py-2 rounded-xl text-slate-600 hover:text-slate-900 transition">Mechanic Crew (7)</button>
+        <button onclick="setCategory('support')" id="btn-support" class="px-3.5 py-2 rounded-xl text-slate-600 hover:text-slate-900 transition">Support & Admin (6)</button>
+      </div>
+
+      <!-- Empty Search State -->
+      <div id="noResultState" class="hidden bg-white border border-slate-200 rounded-3xl p-12 text-center">
+        <div class="w-16 h-16 mx-auto rounded-full bg-amber-50 text-amber-600 flex items-center justify-center text-2xl mb-3">
+          <i class="fa-solid fa-search"></i>
+        </div>
+        <h4 class="text-base font-bold text-slate-800">Posisi tidak ditemukan</h4>
+        <p class="text-xs text-slate-500 mt-1 max-w-sm mx-auto">Tidak ada lowongan yang sesuai dengan kata kunci pencarian Anda. Coba kata kunci yang lain.</p>
+        <button onclick="clearSearch()" class="mt-4 px-4 py-2 bg-slate-900 text-white rounded-xl text-xs font-bold hover:bg-amber-500 hover:text-slate-950 transition">
+          Tampilkan Semua Lowongan
+        </button>
+      </div>
+
+      <!-- Grid Kartu Loker (26 Posisi Lengkap) -->
+      <div id="lokerGrid" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+        <!-- Posisi 1 -->
+        <article class="job-card bg-white rounded-2xl border border-slate-200 p-5 shadow-xs hover:border-amber-400 hover:shadow-md transition flex flex-col justify-between" data-category="operator" data-title="Operator Drilling Machine DM45" data-id="op-1">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-2">
+              <span class="text-[11px] font-bold px-2.5 py-0.5 rounded-lg bg-amber-50 text-amber-800 border border-amber-200">Operator Alat Berat</span>
+              <span class="text-[11px] font-extrabold px-2.5 py-0.5 rounded-lg bg-emerald-50 text-emerald-700 border border-emerald-200"><i class="fa-solid fa-circle-check mr-1"></i>Tersedia</span>
+            </div>
+            <h3 class="text-lg font-black text-slate-900">Operator Drilling Machine (DM45)</h3>
+            <p class="text-xs text-slate-600 mt-1.5 line-clamp-2"><i class="fa-solid fa-bore-hole text-amber-600 mr-1.5"></i>Pengeboran lubang ledak (blasting hole) pit tambang dengan unit Drilling Rig DM45</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-100 flex items-center gap-2">
+            <button type="button" onclick="openDetailModal('op-1')" class="w-1/2 py-2 px-3 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold rounded-xl transition flex items-center justify-center gap-1.5">
+              <i class="fa-solid fa-circle-info text-amber-600"></i> Kualifikasi
+            </button>
+            <button type="button" onclick="pilihLoker('Operator Drilling Machine (DM45)')" class="w-1/2 py-2 px-3 bg-coal-900 hover:bg-amber-500 hover:text-slate-950 text-white text-xs font-black rounded-xl transition flex items-center justify-center gap-1.5">
+              <span>Lamar</span> <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </article>
+
+        <!-- Posisi 2 -->
+        <article class="job-card bg-white rounded-2xl border border-slate-200 p-5 shadow-xs hover:border-amber-400 hover:shadow-md transition flex flex-col justify-between" data-category="operator" data-title="Operator Excavator 80T Class Hitachi ZX870 Doosan DX800 Volvo EC750" data-id="op-2">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-2">
+              <span class="text-[11px] font-bold px-2.5 py-0.5 rounded-lg bg-amber-50 text-amber-800 border border-amber-200">Operator Alat Berat</span>
+              <span class="text-[11px] font-extrabold px-2.5 py-0.5 rounded-lg bg-emerald-50 text-emerald-700 border border-emerald-200"><i class="fa-solid fa-circle-check mr-1"></i>Tersedia</span>
+            </div>
+            <h3 class="text-lg font-black text-slate-900">Operator Excavator 80T Class</h3>
+            <p class="text-xs text-slate-600 mt-1.5 line-clamp-2"><i class="fa-solid fa-truck-monster text-amber-600 mr-1.5"></i>Loading OB & batubara kapasitas besar: Hitachi ZX870 / Doosan DX800 / Volvo EC750</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-100 flex items-center gap-2">
+            <button type="button" onclick="openDetailModal('op-2')" class="w-1/2 py-2 px-3 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold rounded-xl transition flex items-center justify-center gap-1.5">
+              <i class="fa-solid fa-circle-info text-amber-600"></i> Kualifikasi
+            </button>
+            <button type="button" onclick="pilihLoker('Operator Excavator 80T Class (Hitachi ZX870 / Doosan DX800 / Volvo EC750)')" class="w-1/2 py-2 px-3 bg-coal-900 hover:bg-amber-500 hover:text-slate-950 text-white text-xs font-black rounded-xl transition flex items-center justify-center gap-1.5">
+              <span>Lamar</span> <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </article>
+
+        <!-- Posisi 3 -->
+        <article class="job-card bg-white rounded-2xl border border-slate-200 p-5 shadow-xs hover:border-amber-400 hover:shadow-md transition flex flex-col justify-between" data-category="operator" data-title="Operator Excavator 60T Class Hitachi ZX670" data-id="op-3">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-2">
+              <span class="text-[11px] font-bold px-2.5 py-0.5 rounded-lg bg-amber-50 text-amber-800 border border-amber-200">Operator Alat Berat</span>
+              <span class="text-[11px] font-extrabold px-2.5 py-0.5 rounded-lg bg-emerald-50 text-emerald-700 border border-emerald-200"><i class="fa-solid fa-circle-check mr-1"></i>Tersedia</span>
+            </div>
+            <h3 class="text-lg font-black text-slate-900">Operator Excavator 60T Class (ZX670)</h3>
+            <p class="text-xs text-slate-600 mt-1.5 line-clamp-2"><i class="fa-solid fa-truck-monster text-amber-600 mr-1.5"></i>Pengupasan overburden & pemuatan batubara unit Hitachi ZX670</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-100 flex items-center gap-2">
+            <button type="button" onclick="openDetailModal('op-3')" class="w-1/2 py-2 px-3 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold rounded-xl transition flex items-center justify-center gap-1.5">
+              <i class="fa-solid fa-circle-info text-amber-600"></i> Kualifikasi
+            </button>
+            <button type="button" onclick="pilihLoker('Operator Excavator 60T Class (Hitachi ZX670)')" class="w-1/2 py-2 px-3 bg-coal-900 hover:bg-amber-500 hover:text-slate-950 text-white text-xs font-black rounded-xl transition flex items-center justify-center gap-1.5">
+              <span>Lamar</span> <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </article>
+
+        <!-- Posisi 4 -->
+        <article class="job-card bg-white rounded-2xl border border-slate-200 p-5 shadow-xs hover:border-amber-400 hover:shadow-md transition flex flex-col justify-between" data-category="operator" data-title="Operator Excavator 40T Class Hitachi ZX470" data-id="op-4">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-2">
+              <span class="text-[11px] font-bold px-2.5 py-0.5 rounded-lg bg-amber-50 text-amber-800 border border-amber-200">Operator Alat Berat</span>
+              <span class="text-[11px] font-extrabold px-2.5 py-0.5 rounded-lg bg-emerald-50 text-emerald-700 border border-emerald-200"><i class="fa-solid fa-circle-check mr-1"></i>Tersedia</span>
+            </div>
+            <h3 class="text-lg font-black text-slate-900">Operator Excavator 40T Class (ZX470)</h3>
+            <p class="text-xs text-slate-600 mt-1.5 line-clamp-2"><i class="fa-solid fa-truck-monster text-amber-600 mr-1.5"></i>Pekerjaan stripping, loading OB, dan penataan front kerja unit Hitachi ZX470</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-100 flex items-center gap-2">
+            <button type="button" onclick="openDetailModal('op-4')" class="w-1/2 py-2 px-3 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold rounded-xl transition flex items-center justify-center gap-1.5">
+              <i class="fa-solid fa-circle-info text-amber-600"></i> Kualifikasi
+            </button>
+            <button type="button" onclick="pilihLoker('Operator Excavator 40T Class (Hitachi ZX470)')" class="w-1/2 py-2 px-3 bg-coal-900 hover:bg-amber-500 hover:text-slate-950 text-white text-xs font-black rounded-xl transition flex items-center justify-center gap-1.5">
+              <span>Lamar</span> <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </article>
+
+        <!-- Posisi 5 -->
+        <article class="job-card bg-white rounded-2xl border border-slate-200 p-5 shadow-xs hover:border-amber-400 hover:shadow-md transition flex flex-col justify-between" data-category="operator" data-title="Operator Excavator 20T Class Hitachi ZX200 Flat Kuku Bucket" data-id="op-5">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-2">
+              <span class="text-[11px] font-bold px-2.5 py-0.5 rounded-lg bg-amber-50 text-amber-800 border border-amber-200">Operator Alat Berat</span>
+              <span class="text-[11px] font-extrabold px-2.5 py-0.5 rounded-lg bg-emerald-50 text-emerald-700 border border-emerald-200"><i class="fa-solid fa-circle-check mr-1"></i>Tersedia</span>
+            </div>
+            <h3 class="text-lg font-black text-slate-900">Operator Excavator 20T Class (ZX200)</h3>
+            <p class="text-xs text-slate-600 mt-1.5 line-clamp-2"><i class="fa-solid fa-truck-monster text-amber-600 mr-1.5"></i>Drainase pit, coal cleaning, sloped channel (Flat / Kuku Bucket)</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-100 flex items-center gap-2">
+            <button type="button" onclick="openDetailModal('op-5')" class="w-1/2 py-2 px-3 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold rounded-xl transition flex items-center justify-center gap-1.5">
+              <i class="fa-solid fa-circle-info text-amber-600"></i> Kualifikasi
+            </button>
+            <button type="button" onclick="pilihLoker('Operator Excavator 20T Class (Hitachi ZX200 - Flat / Kuku Bucket)')" class="w-1/2 py-2 px-3 bg-coal-900 hover:bg-amber-500 hover:text-slate-950 text-white text-xs font-black rounded-xl transition flex items-center justify-center gap-1.5">
+              <span>Lamar</span> <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </article>
+
+        <!-- Posisi 6 -->
+        <article class="job-card bg-white rounded-2xl border border-slate-200 p-5 shadow-xs hover:border-amber-400 hover:shadow-md transition flex flex-col justify-between" data-category="operator" data-title="Operator ADT Volvo A40F A40G Articulated Dump Truck" data-id="op-6">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-2">
+              <span class="text-[11px] font-bold px-2.5 py-0.5 rounded-lg bg-amber-50 text-amber-800 border border-amber-200">Operator Alat Berat</span>
+              <span class="text-[11px] font-extrabold px-2.5 py-0.5 rounded-lg bg-emerald-50 text-emerald-700 border border-emerald-200"><i class="fa-solid fa-circle-check mr-1"></i>Tersedia</span>
+            </div>
+            <h3 class="text-lg font-black text-slate-900">Operator ADT (Volvo A40F / A40G)</h3>
+            <p class="text-xs text-slate-600 mt-1.5 line-clamp-2"><i class="fa-solid fa-truck text-amber-600 mr-1.5"></i>Hauling material medan lunak & tanjakan ekstrem unit Articulated Dump Truck Volvo</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-100 flex items-center gap-2">
+            <button type="button" onclick="openDetailModal('op-6')" class="w-1/2 py-2 px-3 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold rounded-xl transition flex items-center justify-center gap-1.5">
+              <i class="fa-solid fa-circle-info text-amber-600"></i> Kualifikasi
+            </button>
+            <button type="button" onclick="pilihLoker('Operator ADT (Volvo A40F / A40G)')" class="w-1/2 py-2 px-3 bg-coal-900 hover:bg-amber-500 hover:text-slate-950 text-white text-xs font-black rounded-xl transition flex items-center justify-center gap-1.5">
+              <span>Lamar</span> <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </article>
+
+        <!-- Posisi 7 -->
+        <article class="job-card bg-white rounded-2xl border border-slate-200 p-5 shadow-xs hover:border-amber-400 hover:shadow-md transition flex flex-col justify-between" data-category="operator" data-title="Operator Dozer Heavy Komatsu D375" data-id="op-7">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-2">
+              <span class="text-[11px] font-bold px-2.5 py-0.5 rounded-lg bg-amber-50 text-amber-800 border border-amber-200">Operator Alat Berat</span>
+              <span class="text-[11px] font-extrabold px-2.5 py-0.5 rounded-lg bg-emerald-50 text-emerald-700 border border-emerald-200"><i class="fa-solid fa-circle-check mr-1"></i>Tersedia</span>
+            </div>
+            <h3 class="text-lg font-black text-slate-900">Operator Dozer Heavy (Komatsu D375)</h3>
+            <p class="text-xs text-slate-600 mt-1.5 line-clamp-2"><i class="fa-solid fa-tractor text-amber-600 mr-1.5"></i>Ripping batuan keras, land clearing, & spreading area disposal kapasitas raksasa</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-100 flex items-center gap-2">
+            <button type="button" onclick="openDetailModal('op-7')" class="w-1/2 py-2 px-3 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold rounded-xl transition flex items-center justify-center gap-1.5">
+              <i class="fa-solid fa-circle-info text-amber-600"></i> Kualifikasi
+            </button>
+            <button type="button" onclick="pilihLoker('Operator Dozer Heavy (Komatsu D375)')" class="w-1/2 py-2 px-3 bg-coal-900 hover:bg-amber-500 hover:text-slate-950 text-white text-xs font-black rounded-xl transition flex items-center justify-center gap-1.5">
+              <span>Lamar</span> <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </article>
+
+        <!-- Posisi 8 -->
+        <article class="job-card bg-white rounded-2xl border border-slate-200 p-5 shadow-xs hover:border-amber-400 hover:shadow-md transition flex flex-col justify-between" data-category="operator" data-title="Operator Dozer Medium Komatsu D85 Shantui" data-id="op-8">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-2">
+              <span class="text-[11px] font-bold px-2.5 py-0.5 rounded-lg bg-amber-50 text-amber-800 border border-amber-200">Operator Alat Berat</span>
+              <span class="text-[11px] font-extrabold px-2.5 py-0.5 rounded-lg bg-emerald-50 text-emerald-700 border border-emerald-200"><i class="fa-solid fa-circle-check mr-1"></i>Tersedia</span>
+            </div>
+            <h3 class="text-lg font-black text-slate-900">Operator Dozer Medium (D85 / Shantui)</h3>
+            <p class="text-xs text-slate-600 mt-1.5 line-clamp-2"><i class="fa-solid fa-tractor text-amber-600 mr-1.5"></i>Perataan disposal, pemeliharaan front loading pit, & jalan hauling tambang</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-100 flex items-center gap-2">
+            <button type="button" onclick="openDetailModal('op-8')" class="w-1/2 py-2 px-3 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold rounded-xl transition flex items-center justify-center gap-1.5">
+              <i class="fa-solid fa-circle-info text-amber-600"></i> Kualifikasi
+            </button>
+            <button type="button" onclick="pilihLoker('Operator Dozer Medium (Komatsu D85 / Shantui)')" class="w-1/2 py-2 px-3 bg-coal-900 hover:bg-amber-500 hover:text-slate-950 text-white text-xs font-black rounded-xl transition flex items-center justify-center gap-1.5">
+              <span>Lamar</span> <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </article>
+
+        <!-- Posisi 9 -->
+        <article class="job-card bg-white rounded-2xl border border-slate-200 p-5 shadow-xs hover:border-amber-400 hover:shadow-md transition flex flex-col justify-between" data-category="operator" data-title="Operator Motor Grader SEM CAT" data-id="op-9">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-2">
+              <span class="text-[11px] font-bold px-2.5 py-0.5 rounded-lg bg-amber-50 text-amber-800 border border-amber-200">Operator Alat Berat</span>
+              <span class="text-[11px] font-extrabold px-2.5 py-0.5 rounded-lg bg-emerald-50 text-emerald-700 border border-emerald-200"><i class="fa-solid fa-circle-check mr-1"></i>Tersedia</span>
+            </div>
+            <h3 class="text-lg font-black text-slate-900">Operator Motor Grader (SEM / CAT)</h3>
+            <p class="text-xs text-slate-600 mt-1.5 line-clamp-2"><i class="fa-solid fa-road text-amber-600 mr-1.5"></i>Perawatan grading jalan hauling tambang, camber kemiringan, & pembuatan parit</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-100 flex items-center gap-2">
+            <button type="button" onclick="openDetailModal('op-9')" class="w-1/2 py-2 px-3 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold rounded-xl transition flex items-center justify-center gap-1.5">
+              <i class="fa-solid fa-circle-info text-amber-600"></i> Kualifikasi
+            </button>
+            <button type="button" onclick="pilihLoker('Operator Motor Grader (SEM / CAT)')" class="w-1/2 py-2 px-3 bg-coal-900 hover:bg-amber-500 hover:text-slate-950 text-white text-xs font-black rounded-xl transition flex items-center justify-center gap-1.5">
+              <span>Lamar</span> <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </article>
+
+        <!-- Posisi 10 -->
+        <article class="job-card bg-white rounded-2xl border border-slate-200 p-5 shadow-xs hover:border-amber-400 hover:shadow-md transition flex flex-col justify-between" data-category="operator" data-title="Operator Wheel Loader CAT Caterpillar" data-id="op-10">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-2">
+              <span class="text-[11px] font-bold px-2.5 py-0.5 rounded-lg bg-amber-50 text-amber-800 border border-amber-200">Operator Alat Berat</span>
+              <span class="text-[11px] font-extrabold px-2.5 py-0.5 rounded-lg bg-emerald-50 text-emerald-700 border border-emerald-200"><i class="fa-solid fa-circle-check mr-1"></i>Tersedia</span>
+            </div>
+            <h3 class="text-lg font-black text-slate-900">Operator Wheel Loader (CAT)</h3>
+            <p class="text-xs text-slate-600 mt-1.5 line-clamp-2"><i class="fa-solid fa-truck-pickup text-amber-600 mr-1.5"></i>Pemuatan batubara stockpile, feeding hopper crusher, & perapian area rompit</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-100 flex items-center gap-2">
+            <button type="button" onclick="openDetailModal('op-10')" class="w-1/2 py-2 px-3 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold rounded-xl transition flex items-center justify-center gap-1.5">
+              <i class="fa-solid fa-circle-info text-amber-600"></i> Kualifikasi
+            </button>
+            <button type="button" onclick="pilihLoker('Operator Wheel Loader (CAT)')" class="w-1/2 py-2 px-3 bg-coal-900 hover:bg-amber-500 hover:text-slate-950 text-white text-xs font-black rounded-xl transition flex items-center justify-center gap-1.5">
+              <span>Lamar</span> <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </article>
+
+        <!-- Posisi 11 -->
+        <article class="job-card bg-white rounded-2xl border border-slate-200 p-5 shadow-xs hover:border-amber-400 hover:shadow-md transition flex flex-col justify-between" data-category="operator" data-title="Operator Compactor Sakai Roller" data-id="op-11">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-2">
+              <span class="text-[11px] font-bold px-2.5 py-0.5 rounded-lg bg-amber-50 text-amber-800 border border-amber-200">Operator Alat Berat</span>
+              <span class="text-[11px] font-extrabold px-2.5 py-0.5 rounded-lg bg-emerald-50 text-emerald-700 border border-emerald-200"><i class="fa-solid fa-circle-check mr-1"></i>Tersedia</span>
+            </div>
+            <h3 class="text-lg font-black text-slate-900">Operator Compactor (Sakai)</h3>
+            <p class="text-xs text-slate-600 mt-1.5 line-clamp-2"><i class="fa-solid fa-compact-disc text-amber-600 mr-1.5"></i>Pemadatan sub-base jalan hauling, settling pond, dan disposal unit Sakai</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-100 flex items-center gap-2">
+            <button type="button" onclick="openDetailModal('op-11')" class="w-1/2 py-2 px-3 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold rounded-xl transition flex items-center justify-center gap-1.5">
+              <i class="fa-solid fa-circle-info text-amber-600"></i> Kualifikasi
+            </button>
+            <button type="button" onclick="pilihLoker('Operator Compactor (Sakai)')" class="w-1/2 py-2 px-3 bg-coal-900 hover:bg-amber-500 hover:text-slate-950 text-white text-xs font-black rounded-xl transition flex items-center justify-center gap-1.5">
+              <span>Lamar</span> <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </article>
+
+        <!-- Posisi 12 -->
+        <article class="job-card bg-white rounded-2xl border border-slate-200 p-5 shadow-xs hover:border-amber-400 hover:shadow-md transition flex flex-col justify-between" data-category="operator" data-title="Driver Water Truck WT Hino Iveco" data-id="op-12">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-2">
+              <span class="text-[11px] font-bold px-2.5 py-0.5 rounded-lg bg-blue-50 text-blue-800 border border-blue-200">Driver Tambang</span>
+              <span class="text-[11px] font-extrabold px-2.5 py-0.5 rounded-lg bg-emerald-50 text-emerald-700 border border-emerald-200"><i class="fa-solid fa-circle-check mr-1"></i>Tersedia</span>
+            </div>
+            <h3 class="text-lg font-black text-slate-900">Driver Water Truck (Hino / Iveco)</h3>
+            <p class="text-xs text-slate-600 mt-1.5 line-clamp-2"><i class="fa-solid fa-droplet text-amber-600 mr-1.5"></i>Penyiraman debu jalan hauling tambang & pasokan air operasional (SIM B2 Umum)</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-100 flex items-center gap-2">
+            <button type="button" onclick="openDetailModal('op-12')" class="w-1/2 py-2 px-3 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold rounded-xl transition flex items-center justify-center gap-1.5">
+              <i class="fa-solid fa-circle-info text-amber-600"></i> Kualifikasi
+            </button>
+            <button type="button" onclick="pilihLoker('Driver Water Truck (Hino / Iveco)')" class="w-1/2 py-2 px-3 bg-coal-900 hover:bg-amber-500 hover:text-slate-950 text-white text-xs font-black rounded-xl transition flex items-center justify-center gap-1.5">
+              <span>Lamar</span> <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </article>
+
+        <!-- Posisi 13 -->
+        <article class="job-card bg-white rounded-2xl border border-slate-200 p-5 shadow-xs hover:border-amber-400 hover:shadow-md transition flex flex-col justify-between" data-category="operator" data-title="Driver Dump Truck DT Hino Hanvan Howo" data-id="op-13">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-2">
+              <span class="text-[11px] font-bold px-2.5 py-0.5 rounded-lg bg-blue-50 text-blue-800 border border-blue-200">Driver Tambang</span>
+              <span class="text-[11px] font-extrabold px-2.5 py-0.5 rounded-lg bg-emerald-50 text-emerald-700 border border-emerald-200"><i class="fa-solid fa-circle-check mr-1"></i>Tersedia</span>
+            </div>
+            <h3 class="text-lg font-black text-slate-900">Driver Dump Truck (DT)</h3>
+            <p class="text-xs text-slate-600 mt-1.5 line-clamp-2"><i class="fa-solid fa-truck-moving text-amber-600 mr-1.5"></i>Hauling overburden dan batubara unit DT tronton (Hino / Hanvan / Howo)</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-100 flex items-center gap-2">
+            <button type="button" onclick="openDetailModal('op-13')" class="w-1/2 py-2 px-3 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold rounded-xl transition flex items-center justify-center gap-1.5">
+              <i class="fa-solid fa-circle-info text-amber-600"></i> Kualifikasi
+            </button>
+            <button type="button" onclick="pilihLoker('Driver Dump Truck (DT) (Hino / Hanvan / Howo)')" class="w-1/2 py-2 px-3 bg-coal-900 hover:bg-amber-500 hover:text-slate-950 text-white text-xs font-black rounded-xl transition flex items-center justify-center gap-1.5">
+              <span>Lamar</span> <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </article>
+
+        <!-- Posisi 14 -->
+        <article class="job-card bg-white rounded-2xl border border-slate-200 p-5 shadow-xs hover:border-amber-400 hover:shadow-md transition flex flex-col justify-between" data-category="mechanic" data-title="Mechanic HE Wheel Loader Grader ADT Volvo" data-id="mc-1">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-2">
+              <span class="text-[11px] font-bold px-2.5 py-0.5 rounded-lg bg-amber-50 text-amber-800 border border-amber-200">Mechanic Crew</span>
+              <span class="text-[11px] font-extrabold px-2.5 py-0.5 rounded-lg bg-emerald-50 text-emerald-700 border border-emerald-200"><i class="fa-solid fa-circle-check mr-1"></i>Tersedia</span>
+            </div>
+            <h3 class="text-lg font-black text-slate-900">Mechanic HE Wheel</h3>
+            <p class="text-xs text-slate-600 mt-1.5 line-clamp-2"><i class="fa-solid fa-wrench text-amber-600 mr-1.5"></i>Perawatan & troubleshooting unit roda (Wheel Loader, Grader, ADT Volvo)</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-100 flex items-center gap-2">
+            <button type="button" onclick="openDetailModal('mc-1')" class="w-1/2 py-2 px-3 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold rounded-xl transition flex items-center justify-center gap-1.5">
+              <i class="fa-solid fa-circle-info text-amber-600"></i> Kualifikasi
+            </button>
+            <button type="button" onclick="pilihLoker('Mechanic HE Wheel')" class="w-1/2 py-2 px-3 bg-coal-900 hover:bg-amber-500 hover:text-slate-950 text-white text-xs font-black rounded-xl transition flex items-center justify-center gap-1.5">
+              <span>Lamar</span> <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </article>
+
+        <!-- Posisi 15 -->
+        <article class="job-card bg-white rounded-2xl border border-slate-200 p-5 shadow-xs hover:border-amber-400 hover:shadow-md transition flex flex-col justify-between" data-category="mechanic" data-title="Mechanic HE Track Excavator Bulldozer" data-id="mc-2">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-2">
+              <span class="text-[11px] font-bold px-2.5 py-0.5 rounded-lg bg-amber-50 text-amber-800 border border-amber-200">Mechanic Crew</span>
+              <span class="text-[11px] font-extrabold px-2.5 py-0.5 rounded-lg bg-emerald-50 text-emerald-700 border border-emerald-200"><i class="fa-solid fa-circle-check mr-1"></i>Tersedia</span>
+            </div>
+            <h3 class="text-lg font-black text-slate-900">Mechanic HE Track</h3>
+            <p class="text-xs text-slate-600 mt-1.5 line-clamp-2"><i class="fa-solid fa-wrench text-amber-600 mr-1.5"></i>Perawatan & overhaul unit track rantai (Excavator PC-class & Dozer D-class)</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-100 flex items-center gap-2">
+            <button type="button" onclick="openDetailModal('mc-2')" class="w-1/2 py-2 px-3 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold rounded-xl transition flex items-center justify-center gap-1.5">
+              <i class="fa-solid fa-circle-info text-amber-600"></i> Kualifikasi
+            </button>
+            <button type="button" onclick="pilihLoker('Mechanic HE Track')" class="w-1/2 py-2 px-3 bg-coal-900 hover:bg-amber-500 hover:text-slate-950 text-white text-xs font-black rounded-xl transition flex items-center justify-center gap-1.5">
+              <span>Lamar</span> <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </article>
+
+        <!-- Posisi 16 -->
+        <article class="job-card bg-white rounded-2xl border border-slate-200 p-5 shadow-xs hover:border-amber-400 hover:shadow-md transition flex flex-col justify-between" data-category="mechanic" data-title="Mechanic DT Scania Volvo Mercedes Hino" data-id="mc-3">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-2">
+              <span class="text-[11px] font-bold px-2.5 py-0.5 rounded-lg bg-amber-50 text-amber-800 border border-amber-200">Mechanic Crew</span>
+              <span class="text-[11px] font-extrabold px-2.5 py-0.5 rounded-lg bg-emerald-50 text-emerald-700 border border-emerald-200"><i class="fa-solid fa-circle-check mr-1"></i>Tersedia</span>
+            </div>
+            <h3 class="text-lg font-black text-slate-900">Mechanic Dump Truck (DT)</h3>
+            <p class="text-xs text-slate-600 mt-1.5 line-clamp-2"><i class="fa-solid fa-truck-monster text-amber-600 mr-1.5"></i>Perawatan, overhaul mesin & transmisi armada dump truck tambang</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-100 flex items-center gap-2">
+            <button type="button" onclick="openDetailModal('mc-3')" class="w-1/2 py-2 px-3 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold rounded-xl transition flex items-center justify-center gap-1.5">
+              <i class="fa-solid fa-circle-info text-amber-600"></i> Kualifikasi
+            </button>
+            <button type="button" onclick="pilihLoker('Mechanic DT')" class="w-1/2 py-2 px-3 bg-coal-900 hover:bg-amber-500 hover:text-slate-950 text-white text-xs font-black rounded-xl transition flex items-center justify-center gap-1.5">
+              <span>Lamar</span> <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </article>
+
+        <!-- Posisi 17 -->
+        <article class="job-card bg-white rounded-2xl border border-slate-200 p-5 shadow-xs hover:border-amber-400 hover:shadow-md transition flex flex-col justify-between" data-category="mechanic" data-title="Electrician Auto Electrician Kelistrikan ECM" data-id="mc-4">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-2">
+              <span class="text-[11px] font-bold px-2.5 py-0.5 rounded-lg bg-amber-50 text-amber-800 border border-amber-200">Mechanic Crew</span>
+              <span class="text-[11px] font-extrabold px-2.5 py-0.5 rounded-lg bg-emerald-50 text-emerald-700 border border-emerald-200"><i class="fa-solid fa-circle-check mr-1"></i>Tersedia</span>
+            </div>
+            <h3 class="text-lg font-black text-slate-900">Electrician (Auto Electrician)</h3>
+            <p class="text-xs text-slate-600 mt-1.5 line-clamp-2"><i class="fa-solid fa-bolt text-amber-600 mr-1.5"></i>Troubleshooting diagram kelistrikan, starting system, sensor & modul ECM</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-100 flex items-center gap-2">
+            <button type="button" onclick="openDetailModal('mc-4')" class="w-1/2 py-2 px-3 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold rounded-xl transition flex items-center justify-center gap-1.5">
+              <i class="fa-solid fa-circle-info text-amber-600"></i> Kualifikasi
+            </button>
+            <button type="button" onclick="pilihLoker('Electrician')" class="w-1/2 py-2 px-3 bg-coal-900 hover:bg-amber-500 hover:text-slate-950 text-white text-xs font-black rounded-xl transition flex items-center justify-center gap-1.5">
+              <span>Lamar</span> <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </article>
+
+        <!-- Posisi 18 -->
+        <article class="job-card bg-white rounded-2xl border border-slate-200 p-5 shadow-xs hover:border-amber-400 hover:shadow-md transition flex flex-col justify-between" data-category="mechanic" data-title="Fabrikasi Welder Bodywork Line Boring SMAW FCAW" data-id="mc-5">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-2">
+              <span class="text-[11px] font-bold px-2.5 py-0.5 rounded-lg bg-amber-50 text-amber-800 border border-amber-200">Mechanic Crew</span>
+              <span class="text-[11px] font-extrabold px-2.5 py-0.5 rounded-lg bg-emerald-50 text-emerald-700 border border-emerald-200"><i class="fa-solid fa-circle-check mr-1"></i>Tersedia</span>
+            </div>
+            <h3 class="text-lg font-black text-slate-900">Fabrikasi (Welder / Bodywork)</h3>
+            <p class="text-xs text-slate-600 mt-1.5 line-clamp-2"><i class="fa-solid fa-fire-burner text-amber-600 mr-1.5"></i>Fabrikasi bucket, bodywork vessel dump truck, gouging & pengelasan struktur</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-100 flex items-center gap-2">
+            <button type="button" onclick="openDetailModal('mc-5')" class="w-1/2 py-2 px-3 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold rounded-xl transition flex items-center justify-center gap-1.5">
+              <i class="fa-solid fa-circle-info text-amber-600"></i> Kualifikasi
+            </button>
+            <button type="button" onclick="pilihLoker('Fabrikasi (Welder, Bodywork, Line Boring)')" class="w-1/2 py-2 px-3 bg-coal-900 hover:bg-amber-500 hover:text-slate-950 text-white text-xs font-black rounded-xl transition flex items-center justify-center gap-1.5">
+              <span>Lamar</span> <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </article>
+
+        <!-- Posisi 19 -->
+        <article class="job-card bg-white rounded-2xl border border-slate-200 p-5 shadow-xs hover:border-amber-400 hover:shadow-md transition flex flex-col justify-between" data-category="mechanic" data-title="Tyreman Ban OTR Off The Road" data-id="mc-6">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-2">
+              <span class="text-[11px] font-bold px-2.5 py-0.5 rounded-lg bg-amber-50 text-amber-800 border border-amber-200">Mechanic Crew</span>
+              <span class="text-[11px] font-extrabold px-2.5 py-0.5 rounded-lg bg-emerald-50 text-emerald-700 border border-emerald-200"><i class="fa-solid fa-circle-check mr-1"></i>Tersedia</span>
+            </div>
+            <h3 class="text-lg font-black text-slate-900">Tyreman (Spesialis Ban Tambang)</h3>
+            <p class="text-xs text-slate-600 mt-1.5 line-clamp-2"><i class="fa-solid fa-circle-notch text-amber-600 mr-1.5"></i>Pergantian ban OTR, rotasi ban, monitoring tekanan psi & torque wheel nut</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-100 flex items-center gap-2">
+            <button type="button" onclick="openDetailModal('mc-6')" class="w-1/2 py-2 px-3 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold rounded-xl transition flex items-center justify-center gap-1.5">
+              <i class="fa-solid fa-circle-info text-amber-600"></i> Kualifikasi
+            </button>
+            <button type="button" onclick="pilihLoker('Tyreman')" class="w-1/2 py-2 px-3 bg-coal-900 hover:bg-amber-500 hover:text-slate-950 text-white text-xs font-black rounded-xl transition flex items-center justify-center gap-1.5">
+              <span>Lamar</span> <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </article>
+
+        <!-- Posisi 20 -->
+        <article class="job-card bg-white rounded-2xl border border-slate-200 p-5 shadow-xs hover:border-amber-400 hover:shadow-md transition flex flex-col justify-between" data-category="mechanic" data-title="Maintenance Servicing Mechanic Lube Truck Oli Greasing" data-id="mc-7">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-2">
+              <span class="text-[11px] font-bold px-2.5 py-0.5 rounded-lg bg-amber-50 text-amber-800 border border-amber-200">Mechanic Crew</span>
+              <span class="text-[11px] font-extrabold px-2.5 py-0.5 rounded-lg bg-emerald-50 text-emerald-700 border border-emerald-200"><i class="fa-solid fa-circle-check mr-1"></i>Tersedia</span>
+            </div>
+            <h3 class="text-lg font-black text-slate-900">Maintenance Servicing Mechanic</h3>
+            <p class="text-xs text-slate-600 mt-1.5 line-clamp-2"><i class="fa-solid fa-oil-can text-amber-600 mr-1.5"></i>Preventive maintenance periodik, servicing lube truck, penggantian oli & filter</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-100 flex items-center gap-2">
+            <button type="button" onclick="openDetailModal('mc-7')" class="w-1/2 py-2 px-3 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold rounded-xl transition flex items-center justify-center gap-1.5">
+              <i class="fa-solid fa-circle-info text-amber-600"></i> Kualifikasi
+            </button>
+            <button type="button" onclick="pilihLoker('Maintenance Servicing Mechanic')" class="w-1/2 py-2 px-3 bg-coal-900 hover:bg-amber-500 hover:text-slate-950 text-white text-xs font-black rounded-xl transition flex items-center justify-center gap-1.5">
+              <span>Lamar</span> <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </article>
+
+        <!-- Posisi 21 -->
+        <article class="job-card bg-white rounded-2xl border border-slate-200 p-5 shadow-xs hover:border-amber-400 hover:shadow-md transition flex flex-col justify-between" data-category="support" data-title="Warehouse Team Storeman Suku Cadang Sparepart" data-id="sp-1">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-2">
+              <span class="text-[11px] font-bold px-2.5 py-0.5 rounded-lg bg-blue-50 text-blue-800 border border-blue-200">Tim Support</span>
+              <span class="text-[11px] font-extrabold px-2.5 py-0.5 rounded-lg bg-emerald-50 text-emerald-700 border border-emerald-200"><i class="fa-solid fa-circle-check mr-1"></i>Tersedia</span>
+            </div>
+            <h3 class="text-lg font-black text-slate-900">Warehouse Team (Storeman)</h3>
+            <p class="text-xs text-slate-600 mt-1.5 line-clamp-2"><i class="fa-solid fa-boxes-stacked text-amber-600 mr-1.5"></i>Penerimaan, tata letak binning sparepart, issuing komponen, & stok opname</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-100 flex items-center gap-2">
+            <button type="button" onclick="openDetailModal('sp-1')" class="w-1/2 py-2 px-3 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold rounded-xl transition flex items-center justify-center gap-1.5">
+              <i class="fa-solid fa-circle-info text-amber-600"></i> Kualifikasi
+            </button>
+            <button type="button" onclick="pilihLoker('Warehouse Team (Storeman)')" class="w-1/2 py-2 px-3 bg-coal-900 hover:bg-amber-500 hover:text-slate-950 text-white text-xs font-black rounded-xl transition flex items-center justify-center gap-1.5">
+              <span>Lamar</span> <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </article>
+
+        <!-- Posisi 22 -->
+        <article class="job-card bg-white rounded-2xl border border-slate-200 p-5 shadow-xs hover:border-amber-400 hover:shadow-md transition flex flex-col justify-between" data-category="support" data-title="Driver Fuel FT Bahan Bakar Truk Tangki" data-id="sp-2">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-2">
+              <span class="text-[11px] font-bold px-2.5 py-0.5 rounded-lg bg-blue-50 text-blue-800 border border-blue-200">Tim Support</span>
+              <span class="text-[11px] font-extrabold px-2.5 py-0.5 rounded-lg bg-emerald-50 text-emerald-700 border border-emerald-200"><i class="fa-solid fa-circle-check mr-1"></i>Tersedia</span>
+            </div>
+            <h3 class="text-lg font-black text-slate-900">Driver Fuel Truck (FT)</h3>
+            <p class="text-xs text-slate-600 mt-1.5 line-clamp-2"><i class="fa-solid fa-gas-pump text-amber-600 mr-1.5"></i>Distribusi bahan bakar solar ke unit lapangan tambang (Wajib SIM B2 Umum)</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-100 flex items-center gap-2">
+            <button type="button" onclick="openDetailModal('sp-2')" class="w-1/2 py-2 px-3 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold rounded-xl transition flex items-center justify-center gap-1.5">
+              <i class="fa-solid fa-circle-info text-amber-600"></i> Kualifikasi
+            </button>
+            <button type="button" onclick="pilihLoker('Driver Fuel Truck (FT)')" class="w-1/2 py-2 px-3 bg-coal-900 hover:bg-amber-500 hover:text-slate-950 text-white text-xs font-black rounded-xl transition flex items-center justify-center gap-1.5">
+              <span>Lamar</span> <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </article>
+
+        <!-- Posisi 23 -->
+        <article class="job-card bg-white rounded-2xl border border-slate-200 p-5 shadow-xs hover:border-amber-400 hover:shadow-md transition flex flex-col justify-between" data-category="support" data-title="Fuelman Pengisian Solar Alat Berat" data-id="sp-3">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-2">
+              <span class="text-[11px] font-bold px-2.5 py-0.5 rounded-lg bg-blue-50 text-blue-800 border border-blue-200">Tim Support</span>
+              <span class="text-[11px] font-extrabold px-2.5 py-0.5 rounded-lg bg-emerald-50 text-emerald-700 border border-emerald-200"><i class="fa-solid fa-circle-check mr-1"></i>Tersedia</span>
+            </div>
+            <h3 class="text-lg font-black text-slate-900">Fuelman</h3>
+            <p class="text-xs text-slate-600 mt-1.5 line-clamp-2"><i class="fa-solid fa-fill-drip text-amber-600 mr-1.5"></i>Operator pengisian BBM solar alat berat & pencatatan meteran liter fuel flow</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-100 flex items-center gap-2">
+            <button type="button" onclick="openDetailModal('sp-3')" class="w-1/2 py-2 px-3 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold rounded-xl transition flex items-center justify-center gap-1.5">
+              <i class="fa-solid fa-circle-info text-amber-600"></i> Kualifikasi
+            </button>
+            <button type="button" onclick="pilihLoker('Fuelman')" class="w-1/2 py-2 px-3 bg-coal-900 hover:bg-amber-500 hover:text-slate-950 text-white text-xs font-black rounded-xl transition flex items-center justify-center gap-1.5">
+              <span>Lamar</span> <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </article>
+
+        <!-- Posisi 24 -->
+        <article class="job-card bg-white rounded-2xl border border-slate-200 p-5 shadow-xs hover:border-amber-400 hover:shadow-md transition flex flex-col justify-between" data-category="support" data-title="Driver Lowboy Trailer Mobilisasi Alat Berat" data-id="sp-4">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-2">
+              <span class="text-[11px] font-bold px-2.5 py-0.5 rounded-lg bg-blue-50 text-blue-800 border border-blue-200">Tim Support</span>
+              <span class="text-[11px] font-extrabold px-2.5 py-0.5 rounded-lg bg-emerald-50 text-emerald-700 border border-emerald-200"><i class="fa-solid fa-circle-check mr-1"></i>Tersedia</span>
+            </div>
+            <h3 class="text-lg font-black text-slate-900">Driver Lowboy Trailer</h3>
+            <p class="text-xs text-slate-600 mt-1.5 line-clamp-2"><i class="fa-solid fa-truck-ramp-box text-amber-600 mr-1.5"></i>Mobilisasi unit Excavator & Dozer dengan aman di jalan hauling tambang</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-100 flex items-center gap-2">
+            <button type="button" onclick="openDetailModal('sp-4')" class="w-1/2 py-2 px-3 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold rounded-xl transition flex items-center justify-center gap-1.5">
+              <i class="fa-solid fa-circle-info text-amber-600"></i> Kualifikasi
+            </button>
+            <button type="button" onclick="pilihLoker('Driver Lowboy')" class="w-1/2 py-2 px-3 bg-coal-900 hover:bg-amber-500 hover:text-slate-950 text-white text-xs font-black rounded-xl transition flex items-center justify-center gap-1.5">
+              <span>Lamar</span> <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </article>
+
+        <!-- Posisi 25 -->
+        <article class="job-card bg-white rounded-2xl border border-slate-200 p-5 shadow-xs hover:border-amber-400 hover:shadow-md transition flex flex-col justify-between" data-category="support" data-title="Admin Workshop WO Backlog DMR" data-id="sp-5">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-2">
+              <span class="text-[11px] font-bold px-2.5 py-0.5 rounded-lg bg-blue-50 text-blue-800 border border-blue-200">Tim Support & Admin</span>
+              <span class="text-[11px] font-extrabold px-2.5 py-0.5 rounded-lg bg-emerald-50 text-emerald-700 border border-emerald-200"><i class="fa-solid fa-circle-check mr-1"></i>Tersedia</span>
+            </div>
+            <h3 class="text-lg font-black text-slate-900">Admin Workshop</h3>
+            <p class="text-xs text-slate-600 mt-1.5 line-clamp-2"><i class="fa-solid fa-clipboard-check text-amber-600 mr-1.5"></i>Pencatatan Work Order (WO), Timesheet mekanik, & status unit breakdown</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-100 flex items-center gap-2">
+            <button type="button" onclick="openDetailModal('sp-5')" class="w-1/2 py-2 px-3 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold rounded-xl transition flex items-center justify-center gap-1.5">
+              <i class="fa-solid fa-circle-info text-amber-600"></i> Kualifikasi
+            </button>
+            <button type="button" onclick="pilihLoker('Admin Workshop')" class="w-1/2 py-2 px-3 bg-coal-900 hover:bg-amber-500 hover:text-slate-950 text-white text-xs font-black rounded-xl transition flex items-center justify-center gap-1.5">
+              <span>Lamar</span> <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </article>
+
+        <!-- Posisi 26 -->
+        <article class="job-card bg-white rounded-2xl border border-slate-200 p-5 shadow-xs hover:border-amber-400 hover:shadow-md transition flex flex-col justify-between" data-category="support" data-title="Admin Warehouse Gudang PO ERP" data-id="sp-6">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-2">
+              <span class="text-[11px] font-bold px-2.5 py-0.5 rounded-lg bg-blue-50 text-blue-800 border border-blue-200">Tim Support & Admin</span>
+              <span class="text-[11px] font-extrabold px-2.5 py-0.5 rounded-lg bg-emerald-50 text-emerald-700 border border-emerald-200"><i class="fa-solid fa-circle-check mr-1"></i>Tersedia</span>
+            </div>
+            <h3 class="text-lg font-black text-slate-900">Admin Warehouse</h3>
+            <p class="text-xs text-slate-600 mt-1.5 line-clamp-2"><i class="fa-solid fa-file-invoice text-amber-600 mr-1.5"></i>Input mutasi stok sparepart, verifikasi Surat Jalan / PO, & stok opname</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-100 flex items-center gap-2">
+            <button type="button" onclick="openDetailModal('sp-6')" class="w-1/2 py-2 px-3 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold rounded-xl transition flex items-center justify-center gap-1.5">
+              <i class="fa-solid fa-circle-info text-amber-600"></i> Kualifikasi
+            </button>
+            <button type="button" onclick="pilihLoker('Admin Warehouse')" class="w-1/2 py-2 px-3 bg-coal-900 hover:bg-amber-500 hover:text-slate-950 text-white text-xs font-black rounded-xl transition flex items-center justify-center gap-1.5">
+              <span>Lamar</span> <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </article>
+
+      </div>
+    </div>
+
+    <!-- Formulir Pendaftaran Terpadu -->
+    <section id="formLamar" class="scroll-mt-24 bg-white rounded-3xl border border-slate-200 shadow-xl overflow-hidden mt-12">
+      <div class="bg-gradient-to-r from-coal-950 via-coal-900 to-coal-950 p-6 sm:p-8 text-white relative">
+        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-2">
+          <div class="inline-flex items-center gap-2 text-xs font-black px-3.5 py-1 rounded-full bg-amber-500 text-slate-950 uppercase tracking-wider">
+            <i class="fa-solid fa-bolt"></i> Formulir Rekrutmen Online
+          </div>
+          <!-- Progress Bar Label -->
+          <div class="text-xs text-slate-300 font-bold flex items-center gap-2">
+            <span>Kelengkapan Data:</span>
+            <span id="progressPercent" class="text-amber-400 font-black">0%</span>
+          </div>
+        </div>
+        
+        <h2 class="text-2xl sm:text-3xl font-black text-white">Formulir Pendaftaran Mining Operation, Plant & Support</h2>
+        <p class="text-slate-300 text-xs sm:text-sm mt-1 max-w-2xl">
+          Lengkapi data identitas, kualifikasi teknis, serta lampirkan berkas Curriculum Vitae (CV) Anda untuk seleksi administrasi.
+        </p>
+
+        <!-- Dynamic Form Progress Bar -->
+        <div class="w-full bg-slate-800 rounded-full h-1.5 mt-4 overflow-hidden">
+          <div id="formProgressBar" class="bg-amber-500 h-1.5 rounded-full transition-all duration-300" style="width: 0%"></div>
+        </div>
+      </div>
+
+      <form id="recruitmentForm" class="p-6 sm:p-10 space-y-8">
+        
+        <!-- ================= BAGIAN 1: PILIHAN POSISI (TERBUKA SEJAK AWAL) ================= -->
+        <div class="p-5 sm:p-6 bg-white rounded-2xl border-2 border-slate-200 shadow-xs">
+          <div class="flex items-center justify-between mb-3">
+            <div class="flex items-center gap-2">
+              <span class="w-7 h-7 rounded-lg bg-coal-900 text-amber-400 flex items-center justify-center text-xs font-black">
+                <i class="fa-solid fa-briefcase"></i>
+              </span>
+              <div>
+                <label class="block text-xs font-black text-slate-800 uppercase tracking-wider">
+                  POSISI YANG DILAMAR <span class="text-red-500">*</span>
+                </label>
+                <p class="text-[11px] text-slate-500 font-medium">
+                  Pilih satu posisi penugasan dari 26 katalog lowongan kerja yang tersedia.
+                </p>
+              </div>
+            </div>
+            <span class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-bold bg-amber-50 text-amber-800 border border-amber-200">
+              <i class="fa-solid fa-circle-check text-amber-600 text-[10px]"></i> Siap Dipilih
+            </span>
+          </div>
+
+          <div class="relative">
+            <select id="posisiSelect" required onchange="calculateFormProgress()" class="input-focus-ring w-full px-4 py-3.5 bg-white border border-slate-300 rounded-2xl text-sm font-bold text-slate-900 appearance-none transition shadow-xs cursor-pointer">
+              <option value="">-- Pilih Salah Satu Posisi (26 Posisi Siap Dilamar) --</option>
+              <optgroup label="Operator Alat Berat & Driver Tambang">
+                <option value="Operator Drilling Machine (DM45)">Operator Drilling Machine (DM45)</option>
+                <option value="Operator Excavator 80T Class (Hitachi ZX870 / Doosan DX800 / Volvo EC750)">Operator Excavator 80T Class (Hitachi ZX870 / Doosan DX800 / Volvo EC750)</option>
+                <option value="Operator Excavator 60T Class (Hitachi ZX670)">Operator Excavator 60T Class (Hitachi ZX670)</option>
+                <option value="Operator Excavator 40T Class (Hitachi ZX470)">Operator Excavator 40T Class (Hitachi ZX470)</option>
+                <option value="Operator Excavator 20T Class (Hitachi ZX200 - Flat / Kuku Bucket)">Operator Excavator 20T Class (Hitachi ZX200 - Flat / Kuku)</option>
+                <option value="Operator ADT (Volvo A40F / A40G)">Operator ADT (Volvo A40F / A40G)</option>
+                <option value="Operator Dozer Heavy (Komatsu D375)">Operator Dozer Heavy (Komatsu D375)</option>
+                <option value="Operator Dozer Medium (Komatsu D85 / Shantui)">Operator Dozer Medium (Komatsu D85 / Shantui)</option>
+                <option value="Operator Motor Grader (SEM / CAT)">Operator Motor Grader (SEM / CAT)</option>
+                <option value="Operator Wheel Loader (CAT)">Operator Wheel Loader (CAT)</option>
+                <option value="Operator Compactor (Sakai)">Operator Compactor (Sakai)</option>
+                <option value="Driver Water Truck (Hino / Iveco)">Driver Water Truck (Hino / Iveco)</option>
+                <option value="Driver Dump Truck (DT) (Hino / Hanvan / Howo)">Driver Dump Truck (DT) (Hino / Hanvan / Howo)</option>
+              </optgroup>
+              <optgroup label="Mechanic Crew (Workshop & Site)">
+                <option value="Mechanic HE Wheel">Mechanic HE Wheel</option>
+                <option value="Mechanic HE Track">Mechanic HE Track</option>
+                <option value="Mechanic DT">Mechanic Dump Truck (DT)</option>
+                <option value="Electrician">Electrician / Auto Electrician</option>
+                <option value="Fabrikasi (Welder, Bodywork, Line Boring)">Fabrikasi / Welder</option>
+                <option value="Tyreman">Tyreman</option>
+                <option value="Maintenance Servicing Mechanic">Maintenance Servicing Mechanic</option>
+              </optgroup>
+              <optgroup label="Tim Support & Administrasi">
+                <option value="Admin Workshop">Admin Workshop</option>
+                <option value="Admin Warehouse">Admin Warehouse</option>
+                <option value="Warehouse Team (Storeman)">Warehouse Team / Storeman</option>
+                <option value="Driver Fuel Truck (FT)">Driver Fuel Truck (FT)</option>
+                <option value="Fuelman">Fuelman</option>
+                <option value="Driver Lowboy">Driver Lowboy Trailer</option>
+              </optgroup>
+            </select>
+            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-slate-500">
+              <i class="fa-solid fa-chevron-down text-xs"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- ================= BAGIAN 2: GERBANG VERIFIKASI IDENTITAS AWAL (4 KOLOM) ================= -->
+        <div class="p-5 sm:p-6 bg-amber-50/40 rounded-2xl border-2 border-amber-300/80 shadow-xs space-y-4">
+          <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 pb-3 border-b border-amber-200">
+            <div class="flex items-center gap-2">
+              <span class="w-7 h-7 rounded-lg bg-amber-500 text-slate-950 flex items-center justify-center text-xs font-black">
+                <i class="fa-solid fa-id-card"></i>
+              </span>
+              <div>
+                <h3 class="text-sm font-black text-slate-900 uppercase tracking-wider">
+                  Verifikasi Identitas Awal
+                </h3>
+                <p class="text-[11px] text-slate-600 font-medium">
+                  Isi 4 data identitas di bawah ini untuk membuka akses pengisian biodata lanjutan dan berkas.
+                </p>
+              </div>
+            </div>
+            <div id="gateStatusBadge" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-black bg-slate-200 text-slate-700 w-fit">
+              <i class="fa-solid fa-lock text-[10px]" id="gateStatusIcon"></i>
+              <span id="gateStatusText">Formulir Lanjutan Terkunci</span>
+            </div>
+          </div>
+
+          <!-- 4 Kolom Pembuka Utama -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-1">
+            
+            <!-- Kolom 1: Nama Lengkap -->
+            <div>
+              <label class="block text-xs font-bold text-slate-700 uppercase mb-1.5">
+                Nama Lengkap (KTP) <span class="text-red-500">*</span>
+              </label>
+              <input type="text" id="namaInput" required oninput="calculateFormProgress()" placeholder="Contoh: Budi Santoso" class="input-focus-ring w-full px-3.5 py-2.5 bg-white border border-slate-300 rounded-xl text-sm transition">
+            </div>
+
+            <!-- Kolom 2: Jenis Kelamin -->
+            <div>
+              <label class="block text-xs font-bold text-slate-700 uppercase mb-1.5">
+                Jenis Kelamin <span class="text-red-500">*</span>
+              </label>
+              <select id="genderInput" required onchange="onUsiaOrGenderChange()" class="input-focus-ring w-full px-3.5 py-2.5 bg-white border border-slate-300 rounded-xl text-sm text-slate-800 transition">
+                <option value="">-- Pilih Gender --</option>
+                <option value="Laki-laki" selected>Laki-laki (Prioritas Operasional)</option>
+                <option value="Perempuan">Perempuan</option>
+              </select>
+            </div>
+
+            <!-- Kolom 3: Usia -->
+            <div>
+              <label class="block text-xs font-bold text-slate-700 uppercase mb-1.5">
+                Usia (Tahun) <span class="text-red-500">*</span>
+              </label>
+              <input type="number" id="usiaInput" min="18" max="65" required oninput="onUsiaOrGenderChange()" placeholder="Contoh: 28" class="input-focus-ring w-full px-3.5 py-2.5 bg-white border border-slate-300 rounded-xl text-sm transition">
+            </div>
+
+            <!-- Kolom 4: NIK / KTP (16 Digit) -->
+            <div>
+              <div class="flex items-center justify-between mb-1.5">
+                <label class="block text-xs font-bold text-slate-700 uppercase">
+                  NIK / e-KTP (16 Digit) <span class="text-red-500">*</span>
+                </label>
+                <span id="nikLockBadge" class="text-[10px] font-extrabold text-slate-600 bg-slate-100 px-2 py-0.5 rounded border border-slate-200">
+                  <i class="fa-solid fa-lock text-[9px] mr-1"></i>Terkunci
+                </span>
+              </div>
+              <div class="relative flex items-center">
+                <input type="tel" id="ktpInput" inputmode="numeric" pattern="[0-9]{16}" maxlength="16" required disabled oninput="handleNikInput(this)" placeholder="Pilih Gender & Usia dulu" class="input-focus-ring w-full px-3.5 py-2.5 bg-slate-100 border border-slate-300 rounded-xl text-sm transition pr-12 cursor-not-allowed opacity-75">
+                
+                <div class="absolute right-2.5 flex items-center gap-1">
+                  <button type="button" id="btnResetNik" onclick="clearNikInput()" title="Hapus NIK" class="hidden text-slate-400 hover:text-rose-600 focus:outline-none transition p-1 rounded-md">
+                    <i class="fa-solid fa-circle-xmark text-sm"></i>
+                  </button>
+                  <div id="nikStatusIcon" class="text-slate-400 flex items-center">
+                    <i class="fa-solid fa-lock text-slate-400" id="nikLockIcon"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Status Feedback Verifikasi NIK Realtime -->
+          <div id="nikFeedback" class="text-[11px] font-medium text-slate-500 pt-1">
+            Pilih Jenis Kelamin dan isi Usia terlebih dahulu untuk membuka kolom input NIK.
+          </div>
+        </div>
+
+        <!-- ================= BANNER PANDUAN PENGUNCIAN VISUAL (POIN 3) ================= -->
+        <div id="lockInstructionBanner" class="p-4 rounded-2xl bg-gradient-to-r from-amber-500/10 via-amber-500/5 to-transparent border border-amber-300/70 flex items-center justify-between gap-3 transition-all duration-300 shadow-xs">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-amber-500 text-slate-950 flex items-center justify-center text-base font-black flex-shrink-0 shadow-xs">
+              <i class="fa-solid fa-lock" id="bannerLockIcon"></i>
+            </div>
+            <div>
+              <p class="text-xs font-black text-slate-900 uppercase tracking-wide">
+                Formulir Lanjutan Masih Terkunci
+              </p>
+              <p class="text-[11px] text-slate-600 font-medium mt-0.5">
+                Lengkapi 4 data identitas di atas (Nama, Gender, Usia, dan NIK 16 digit yang sah) untuk membuka seluruh isian biodata dan berkas di bawah ini.
+              </p>
+            </div>
+          </div>
+          <a href="#posisiSelect" class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-900 hover:bg-amber-500 hover:text-slate-950 text-white text-[11px] font-bold transition flex-shrink-0">
+            <span>Verifikasi di Atas</span> <i class="fa-solid fa-arrow-up text-[10px]"></i>
+          </a>
+        </div>
+
+        <!-- ================= BAGIAN 3: FORMULIR LANJUTAN & BERKAS (TERKUNCI HINGGA NIK VERIFIED) ================= -->
+        <div id="lockedFormSection" class="locked-section opacity-40 pointer-events-none select-none filter blur-[0.3px] space-y-8 transition-all duration-300">
+
+          <!-- Kelengkapan Biodata & Parameter Fisik -->
+          <div>
+            <h3 class="text-sm font-black text-slate-900 uppercase tracking-wider pb-2 border-b border-slate-200 mb-4 flex items-center gap-2">
+              <i class="fa-solid fa-address-card text-amber-500"></i> Kelengkapan Biodata & Parameter Fisik
+            </h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+              <!-- Kolom WhatsApp dengan Prefix Visual (Hanya Logo WhatsApp & Contoh Angka 0 di Depan) -->
+              <div>
+                <label class="block text-xs font-bold text-slate-700 uppercase mb-1.5">Nomor WhatsApp Aktif <span class="text-red-500">*</span></label>
+                <div class="relative flex items-center">
+                  <span class="absolute left-0 inset-y-0 px-3.5 bg-slate-100 border-r border-slate-300 rounded-l-xl text-slate-600 font-bold text-xs flex items-center justify-center select-none">
+                    <i class="fa-brands fa-whatsapp text-emerald-600 text-base"></i>
+                  </span>
+                  <input type="tel" id="waInput" required disabled oninput="handleWaInput(this)" placeholder="Contoh: 081234567890" class="input-focus-ring w-full pl-14 pr-4 py-2.5 bg-slate-50 border border-slate-300 rounded-xl text-sm transition">
+                </div>
+                <p class="text-[11px] text-slate-500 mt-1"><i class="fa-solid fa-circle-info text-amber-500"></i> Nomor aktif panggilan & tes.</p>
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-slate-700 uppercase mb-1.5">Pendidikan Terakhir <span class="text-red-500">*</span></label>
+                <select id="pendidikanInput" required disabled onchange="calculateFormProgress()" class="input-focus-ring w-full px-4 py-2.5 bg-slate-50 border border-slate-300 rounded-xl text-sm text-slate-800 transition">
+                  <option value="">-- Pilih Pendidikan --</option>
+                  <option value="SMA/SMK Sederajat">SMA / SMK Sederajat</option>
+                  <option value="Diploma (D3)">Diploma (D3)</option>
+                  <option value="Sarjana (D4/S1)">Sarjana (D4 / S1)</option>
+                  <option value="Lainnya">Lainnya</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-slate-700 uppercase mb-1.5">Agama <span class="text-red-500">*</span></label>
+                <select id="agamaInput" required disabled onchange="calculateFormProgress()" class="input-focus-ring w-full px-4 py-2.5 bg-slate-50 border border-slate-300 rounded-xl text-sm text-slate-800 transition">
+                  <option value="">-- Pilih Agama --</option>
+                  <option value="Islam">Islam</option>
+                  <option value="Kristen Protestan">Kristen Protestan</option>
+                  <option value="Katolik">Katolik</option>
+                  <option value="Hindu">Hindu</option>
+                  <option value="Buddha">Buddha</option>
+                  <option value="Konghucu">Konghucu</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-slate-700 uppercase mb-1.5">Golongan Darah <span class="text-red-500">*</span></label>
+                <select id="golDarahInput" required disabled onchange="calculateFormProgress()" class="input-focus-ring w-full px-4 py-2.5 bg-slate-50 border border-slate-300 rounded-xl text-sm text-slate-800 transition">
+                  <option value="">-- Pilih Golongan Darah --</option>
+                  <option value="A">A</option>
+                  <option value="B">B</option>
+                  <option value="AB">AB</option>
+                  <option value="O">O</option>
+                  <option value="Belum Tahu">Belum Tahu</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-slate-700 uppercase mb-1.5">Wilayah Domisili Saat Ini <span class="text-red-500">*</span></label>
+                <select id="wilayahInput" required disabled onchange="calculateFormProgress()" class="input-focus-ring w-full px-4 py-2.5 bg-slate-50 border border-slate-300 rounded-xl text-sm text-slate-800 transition">
+                  <option value="">-- Pilih Wilayah Domisili --</option>
+                  <option value="Kalimantan">Pulau Kalimantan (Prioritas 1)</option>
+                  <option value="Luar Kalimantan">Luar Pulau Kalimantan (Prioritas 2)</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-slate-700 uppercase mb-1.5">Kota / Kabupaten Tinggal <span class="text-red-500">*</span></label>
+                <input type="text" id="kotaInput" required disabled oninput="calculateFormProgress()" placeholder="Contoh: Barito Utara, Banjarmasin" class="input-focus-ring w-full px-4 py-2.5 bg-slate-50 border border-slate-300 rounded-xl text-sm transition">
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-slate-700 uppercase mb-1.5">Tinggi Badan (cm) <span class="text-red-500">*</span></label>
+                <input type="number" id="tinggiBadanInput" min="140" max="210" required disabled oninput="calculateFormProgress()" placeholder="Contoh: 168" class="input-focus-ring w-full px-4 py-2.5 bg-slate-50 border border-slate-300 rounded-xl text-sm transition">
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-slate-700 uppercase mb-1.5">Berat Badan (kg) <span class="text-red-500">*</span></label>
+                <input type="number" id="beratBadanInput" min="35" max="160" required disabled oninput="calculateFormProgress()" placeholder="Contoh: 65" class="input-focus-ring w-full px-4 py-2.5 bg-slate-50 border border-slate-300 rounded-xl text-sm transition">
+              </div>
+              <div class="sm:col-span-2 lg:col-span-4">
+                <label class="block text-xs font-bold text-slate-700 uppercase mb-1.5">Status Pernikahan & Tanggungan <span class="text-red-500">*</span></label>
+                <select id="statusNikahInput" required disabled onchange="calculateFormProgress()" class="input-focus-ring w-full px-4 py-2.5 bg-slate-50 border border-slate-300 rounded-xl text-sm text-slate-800 transition">
+                  <option value="">-- Pilih Status & Tanggungan --</option>
+                  <option value="Belum Menikah (Lajang)">Belum Menikah (Lajang)</option>
+                  <option value="Menikah (Tanpa Anak)">Menikah (Tanpa Anak)</option>
+                  <option value="Menikah (1 - 2 Anak)">Menikah (1 - 2 Anak)</option>
+                  <option value="Menikah (> 2 Anak)">Menikah (Lebih dari 2 Anak)</option>
+                  <option value="Duda / Janda">Duda / Janda</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pengalaman & Lisensi Tambang -->
+          <div>
+            <h3 class="text-sm font-black text-slate-900 uppercase tracking-wider pb-2 border-b border-slate-200 mb-4 flex items-center gap-2">
+              <i class="fa-solid fa-gears text-amber-500"></i> Rekam Jejak Teknis & Lisensi
+            </h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-4">
+              <div>
+                <label class="block text-xs font-bold text-slate-700 uppercase mb-1.5">Pengalaman di Bidang Terkait <span class="text-red-500">*</span></label>
+                <select id="pengalamanInput" required disabled onchange="calculateFormProgress()" class="input-focus-ring w-full px-4 py-2.5 bg-slate-50 border border-slate-300 rounded-xl text-sm text-slate-800 transition">
+                  <option value="">-- Pilih Pengalaman Relevan --</option>
+                  <option value="Senior (> 3 Tahun di Industri Tambang/Kontraktor/Heavy Equipment)">Lebih dari 3 Tahun (Pertambangan / Kontraktor / Alat Berat)</option>
+                  <option value="Menengah (1 - 3 Tahun Operasional Tambang/Plant/Logistik)">1 – 3 Tahun (Operasi Tambang / Workshop Plant / Logistik Gudang)</option>
+                  <option value="Relevan Industri Lain (1 - 3 Tahun Konstruksi/Transportasi/Manufaktur)">1 – 3 Tahun (Konstruksi / Transportasi / Manufaktur Umum)</option>
+                  <option value="Kurang dari 1 Tahun / Fresh Graduate">Kurang dari 1 Tahun / Lulusan Baru (Fresh Graduate)</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-slate-700 uppercase mb-1.5">Kepemilikan Sertifikasi / SIO (Opsional / Nilai Tambah)</label>
+                <input type="text" id="sertifikasiInput" disabled placeholder="Misal: SIO Alat Berat Kemnaker/ESDM, Welder 3G/6G, BMC, SIO Forklift" class="input-focus-ring w-full px-4 py-2.5 bg-slate-50 border border-slate-300 rounded-xl text-sm transition">
+              </div>
+            </div>
+
+            <!-- Ringkasan Pengalaman Singkat 1 Baris -->
+            <div class="mb-5">
+              <label class="block text-xs font-bold text-slate-700 uppercase mb-1.5">
+                Ringkasan Pengalaman Terakhir yang Relevan (Maks. 1 Baris) <span class="text-red-500">*</span>
+              </label>
+              <input type="text" id="pengalamanSingkatInput" maxlength="120" required disabled oninput="calculateFormProgress()" placeholder="Contoh: 3 thn Op ZX870 di PT PAMA Site Kalsel / 2 thn Mekanik DT Scania di Berau" class="input-focus-ring w-full px-4 py-2.5 bg-slate-50 border border-slate-300 rounded-xl text-sm transition">
+              <p class="text-[11px] text-slate-500 mt-1"><i class="fa-solid fa-bolt text-amber-500 mr-1"></i>Tuliskan posisi, unit/keahlian utama, nama perusahaan/subkontraktor, dan lokasi site terakhir.</p>
+            </div>
+
+            <!-- Kepemilikan SIM -->
+            <div>
+              <label class="block text-xs font-bold text-slate-700 uppercase mb-1">
+                Surat Izin Mengemudi (SIM) Aktif
+              </label>
+              <p class="text-[11px] text-slate-500 mb-2.5">Centang semua jenis SIM resmi yang Anda miliki saat ini (Wajib SIM B2 atau B2 Umum untuk Operator & Driver):</p>
+              <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
+                <label class="flex items-center gap-2.5 p-3 bg-slate-50 border border-slate-300 rounded-xl cursor-pointer hover:border-amber-400 hover:bg-amber-50/30 transition">
+                  <input type="checkbox" name="sim[]" value="SIM A" disabled class="sim-check w-4 h-4 text-amber-600 rounded border-slate-300 focus:ring-amber-500">
+                  <span class="text-xs font-semibold text-slate-800">SIM A</span>
+                </label>
+                <label class="flex items-center gap-2.5 p-3 bg-slate-50 border border-slate-300 rounded-xl cursor-pointer hover:border-amber-400 hover:bg-amber-50/30 transition">
+                  <input type="checkbox" name="sim[]" value="SIM B1 / B1 Umum" disabled class="sim-check w-4 h-4 text-amber-600 rounded border-slate-300 focus:ring-amber-500">
+                  <span class="text-xs font-semibold text-slate-800">SIM B1 / Umum</span>
+                </label>
+                <label class="flex items-center gap-2.5 p-3 bg-amber-50/30 border border-amber-300 rounded-xl cursor-pointer hover:border-amber-500 transition">
+                  <input type="checkbox" name="sim[]" value="SIM B2 Polos" disabled class="sim-check w-4 h-4 text-amber-600 rounded border-slate-300 focus:ring-amber-500">
+                  <span class="text-xs font-bold text-amber-950">SIM B2 Biasa</span>
+                </label>
+                <label class="flex items-center gap-2.5 p-3 bg-amber-50/60 border border-amber-400 rounded-xl cursor-pointer hover:border-amber-600 transition">
+                  <input type="checkbox" name="sim[]" value="SIM B2 Umum" disabled class="sim-check w-4 h-4 text-amber-600 rounded border-slate-300 focus:ring-amber-500">
+                  <span class="text-xs font-extrabold text-amber-950">SIM B2 Umum</span>
+                </label>
+                <label class="flex items-center gap-2.5 p-3 bg-slate-50 border border-slate-300 rounded-xl cursor-pointer hover:border-slate-400 transition">
+                  <input type="checkbox" name="sim[]" value="Tidak Memiliki SIM" disabled class="sim-check w-4 h-4 text-slate-500 rounded border-slate-300">
+                  <span class="text-xs font-medium text-slate-600">Belum Ada</span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Status Kerja, Ketersediaan & Ekspektasi -->
+          <div>
+            <h3 class="text-sm font-black text-slate-900 uppercase tracking-wider pb-2 border-b border-slate-200 mb-4 flex items-center gap-2">
+              <i class="fa-solid fa-briefcase text-amber-500"></i> Status Pekerjaan, Ketersediaan & Ekspektasi
+            </h3>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-5 mb-5">
+              <div>
+                <label class="block text-xs font-bold text-slate-700 uppercase mb-1.5">Status Kerja Saat Ini <span class="text-red-500">*</span></label>
+                <select id="statusKerjaInput" required disabled onchange="calculateFormProgress()" class="input-focus-ring w-full px-4 py-2.5 bg-slate-50 border border-slate-300 rounded-xl text-sm text-slate-800 transition">
+                  <option value="">-- Pilih Status Kerja --</option>
+                  <option value="Karyawan di suatu Perusahaan">Masih Bekerja (Karyawan di Perusahaan)</option>
+                  <option value="Berwirausaha Sambil Mencari Pekerjaan Tetap">Berwirausaha / Pekerja Mandiri</option>
+                  <option value="Tidak Bekerja / Sedang Mencari Kerja Aktif">Tidak Bekerja / Mencari Kerja Aktif</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-slate-700 uppercase mb-1.5">Kapan Bisa Bergabung <span class="text-red-500">*</span></label>
+                <select id="noticePeriodInput" required disabled onchange="calculateFormProgress()" class="input-focus-ring w-full px-4 py-2.5 bg-slate-50 border border-slate-300 rounded-xl text-sm text-slate-800 transition">
+                  <option value="">-- Pilih Waktu Bergabung --</option>
+                  <option value="Secepatnya / Segera">Secepatnya / Segera (Ready to Join)</option>
+                  <option value="2 Minggu">2 Minggu</option>
+                  <option value="1 Bulan (1 Month Notice)">1 Bulan (1 Month Notice)</option>
+                  <option value="Negosiasi">Negosiasi</option>
+                </select>
+              </div>
+              <!-- Kolom Ekspektasi Gaji dengan Prefix Visual (POIN 5) -->
+              <div>
+                <label class="block text-xs font-bold text-slate-700 uppercase mb-1.5">Ekspektasi Gaji Bersih/Bln <span class="text-red-500">*</span></label>
+                <div class="relative flex items-center">
+                  <span class="absolute left-0 inset-y-0 px-3.5 bg-slate-100 border-r border-slate-300 rounded-l-xl text-slate-700 font-black text-xs flex items-center select-none">
+                    Rp
+                  </span>
+                  <input type="text" id="gajiInput" required disabled oninput="handleGajiInput(this)" placeholder="Contoh: 7.500.000" class="input-focus-ring w-full pl-14 pr-4 py-2.5 bg-slate-50 border border-slate-300 rounded-xl text-sm font-semibold transition">
+                </div>
+              </div>
+            </div>
+
+            <!-- Komitmen Mutlak Sistem Roster & Penugasan Site -->
+            <div class="p-4 sm:p-5 rounded-2xl bg-slate-50 border border-slate-300 hover:border-amber-400 transition-colors">
+              <label class="flex items-start gap-3.5 cursor-pointer select-none">
+                <input type="checkbox" id="komitmenRosterCheck" required disabled onchange="calculateFormProgress()" class="w-5 h-5 mt-0.5 text-amber-600 rounded-md border-slate-300 focus:ring-amber-500 flex-shrink-0 cursor-pointer">
+                <div class="space-y-1">
+                  <div class="flex items-center gap-1.5 text-xs font-black uppercase tracking-wider text-slate-900">
+                    <i class="fa-solid fa-calendar-check text-amber-600"></i> Komitmen Sistem Roster & Tugas Luar Kota (Wajib) <span class="text-red-500">*</span>
+                  </div>
+                  <p class="text-xs text-slate-600 leading-relaxed font-normal">
+                    Saya menyatakan <strong>bersedia dan berkomitmen penuh</strong> untuk bekerja mengikuti jadwal sistem roster operasional tambang, rotasi shift kerja lapangan, serta penugasan di Site Muara Teweh, Barito Utara, Kalimantan Tengah maupun lokasi site proyek PT KTC lainnya sesuai kebutuhan operasional perusahaan.
+                  </p>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <!-- Upload Berkas CV dengan Visual Chip Checklist (POIN 1) -->
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <label class="block text-xs font-black text-slate-700 uppercase tracking-wider">
+                Unggah Berkas Lamaran & Dokumen Pendukung Lengkap (PDF / DOCX, Maks. 10 MB) <span class="text-red-500">*</span>
+              </label>
+              <span id="cvLockStatusBadge" class="text-[10px] font-black uppercase px-2.5 py-0.5 rounded-full bg-slate-200 text-slate-600">
+                <i class="fa-solid fa-lock mr-1"></i> Terkunci (Verifikasi NIK)
+              </span>
+            </div>
+
+            <!-- Kartu Visual Dokumen dengan Chip Checklist (POIN 1) -->
+            <div class="mb-3.5 p-4 bg-slate-50 border border-slate-200/90 rounded-2xl space-y-3">
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-200/80 pb-2.5">
+                <div class="flex items-center gap-2 text-xs font-black text-slate-800 uppercase tracking-wider">
+                  <i class="fa-solid fa-file-shield text-amber-600 text-sm"></i> Satukan Berkas Dalam 1 File Dokumen:
+                </div>
+                <span class="text-[11px] font-bold text-amber-700 bg-amber-100/70 px-2 py-0.5 rounded-md self-start sm:self-auto">
+                  Format Disarankan: PDF
+                </span>
+              </div>
+
+              <!-- Chip Badges Berkas Yang Dibutuhkan -->
+              <div class="flex flex-wrap gap-1.5 text-[11px] font-semibold text-slate-700">
+                <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-white border border-slate-200 shadow-2xs">
+                  <i class="fa-solid fa-circle-check text-emerald-600 text-[10px]"></i> Curriculum Vitae (CV)
+                </span>
+                <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-white border border-slate-200 shadow-2xs">
+                  <i class="fa-solid fa-circle-check text-emerald-600 text-[10px]"></i> Foto e-KTP Asli
+                </span>
+                <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-white border border-slate-200 shadow-2xs">
+                  <i class="fa-solid fa-circle-check text-emerald-600 text-[10px]"></i> Kartu Keluarga (KK)
+                </span>
+                <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-amber-50/80 border border-amber-300 text-amber-950 shadow-2xs">
+                  <i class="fa-solid fa-id-card text-amber-600 text-[10px]"></i> SIM Aktif (B2/Umum utk Op/Driver)
+                </span>
+                <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-white border border-slate-200 shadow-2xs">
+                  <i class="fa-solid fa-circle-check text-emerald-600 text-[10px]"></i> Ijazah Terakhir
+                </span>
+                <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-white border border-slate-200 shadow-2xs">
+                  <i class="fa-solid fa-circle-check text-emerald-600 text-[10px]"></i> Surat Pengalaman (Paklaring)
+                </span>
+                <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-white border border-slate-200 shadow-2xs">
+                  <i class="fa-solid fa-circle-check text-emerald-600 text-[10px]"></i> SKCK Aktif
+                </span>
+                <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-white border border-slate-200 shadow-2xs text-slate-500">
+                  <i class="fa-solid fa-plus text-slate-400 text-[10px]"></i> SIO / Sertifikat (Opsional)
+                </span>
+              </div>
+
+              <!-- Jaminan Kerahasiaan Data Internal -->
+              <div class="pt-2 border-t border-slate-200/80 flex items-start gap-2 text-[11px] text-emerald-800 bg-emerald-50/70 p-2.5 rounded-xl">
+                <i class="fa-solid fa-shield-halved text-emerald-600 text-xs mt-0.5 flex-shrink-0"></i>
+                <p class="leading-relaxed">
+                  <strong class="font-bold text-emerald-950">Jaminan Kerahasiaan Data:</strong> Dokumen digunakan khusus seleksi internal PT KTC. Kandidat yang <strong>LULUS SELEKSI</strong> langsung diverifikasi onboarding tanpa perlu mengumpulkan data ulang.
+                </p>
+              </div>
+            </div>
+            
+            <div id="dropZone" class="group relative flex flex-col items-center justify-center p-8 border-2 border-slate-300 border-dashed rounded-3xl bg-slate-100 opacity-60 pointer-events-none transition-all cursor-not-allowed text-center">
+              <input id="file-upload" name="file-upload" type="file" required accept=".pdf,.doc,.docx" disabled class="sr-only" onchange="handleFileSelected(this.files)">
+              
+              <div id="dropZoneIdle" class="space-y-3 pointer-events-none">
+                <div id="dropZoneIconBox" class="w-16 h-16 mx-auto rounded-2xl bg-slate-200 text-slate-500 flex items-center justify-center text-3xl shadow-xs transition">
+                  <i class="fa-solid fa-lock" id="dropZoneIcon"></i>
+                </div>
+                <div>
+                  <p id="dropZoneMainText" class="text-sm font-bold text-slate-700">
+                    Loloskan verifikasi NIK di Tahap 1 terlebih dahulu untuk membuka kunci unggah CV
+                  </p>
+                  <p class="text-xs text-slate-400 mt-1">Mendukung format Dokumen PDF atau DOCX (Maksimal 10 MB)</p>
+                </div>
+                <p class="text-[11px] text-slate-500 font-medium">Pastikan berkas terbaca jelas dan memuat bukti pengalaman kerja serta dokumen KTP & KK</p>
+              </div>
+
+              <!-- Tampilan Berkas Terpilih -->
+              <div id="dropZoneActive" class="hidden flex-col items-center space-y-2">
+                <div class="w-14 h-14 rounded-2xl bg-emerald-100 text-emerald-700 flex items-center justify-center text-2xl">
+                  <i class="fa-solid fa-file-circle-check"></i>
+                </div>
+                <p id="selectedFileName" class="text-sm font-bold text-slate-900"></p>
+                <p id="selectedFileSize" class="text-xs text-slate-500 font-medium"></p>
+                <button type="button" onclick="removeSelectedFile(event)" class="mt-2 px-3 py-1 bg-red-50 hover:bg-red-100 text-red-600 rounded-lg text-xs font-bold transition flex items-center gap-1.5">
+                  <i class="fa-solid fa-trash-can"></i> Ganti Berkas
+                </button>
+              </div>
+            </div>
+            
+            <!-- Panduan Kompresi Dokumen PDF -->
+            <div class="mt-2 text-right">
+              <span class="text-[11px] text-slate-500">
+                <i class="fa-solid fa-lightbulb text-amber-500 mr-1"></i>Ukuran gabungan berkas melebihi 10 MB? Anda dapat mengecilkan ukuran di 
+                <a href="https://www.ilovepdf.com/id/mengompres-pdf" target="_blank" rel="noopener noreferrer" class="text-amber-600 font-bold hover:underline">iLovePDF</a> atau 
+                <a href="https://smallpdf.com/id/compress-pdf" target="_blank" rel="noopener noreferrer" class="text-amber-600 font-bold hover:underline">Smallpdf</a> sebelum mengunggah.
+              </span>
+            </div>
+          </div>
+
+          <!-- Klausul Integritas & Anti-Manipulasi Identitas -->
+          <div class="p-4 sm:p-5 rounded-2xl bg-amber-50/60 border border-amber-200/90 border-l-4 border-l-amber-500 text-slate-800 shadow-xs">
+            <label class="flex items-start gap-3.5 cursor-pointer select-none">
+              <input type="checkbox" id="integritasCheck" required disabled onchange="calculateFormProgress()" class="w-5 h-5 mt-0.5 text-amber-600 rounded-md border-slate-300 focus:ring-amber-500 flex-shrink-0 cursor-pointer">
+              <div class="space-y-1">
+                <div class="flex items-center gap-1.5 text-xs font-black uppercase tracking-wider text-amber-950">
+                  <i class="fa-solid fa-file-shield text-amber-600"></i> Pernyataan Integritas Data & Keabsahan Identitas
+                </div>
+                <p class="text-xs text-slate-700 leading-relaxed font-normal">
+                  Saya menyatakan bahwa seluruh data identitas (NIK, Nama, Usia, SIM) yang diisi adalah sah dan sesuai fisik e-KTP asli. Saya memahami bahwa sistem memverifikasi pola identitas secara otomatis, dan saya bersedia didiskualifikasi permanen dari seluruh proses seleksi PT KTC Coal Mining & Energy serta menyetujui bahwa pihak perusahaan berhak menindaklanjuti ke ranah hukum sesuai ketentuan perundang-undangan yang berlaku apabila ditemukan indikasi pemalsuan, manipulasi, atau penyalahgunaan data identitas.
+                </p>
+              </div>
+            </label>
+          </div>
+
+          <!-- Tombol Kirim Form -->
+          <div class="pt-2 border-t border-slate-200">
+            <button type="submit" id="submitBtn" disabled class="w-full py-4 px-6 bg-slate-300 text-slate-500 font-black rounded-2xl transition duration-200 text-base flex items-center justify-center gap-2.5 cursor-not-allowed">
+              <span>KIRIM LAMARAN RESMI SEKARANG</span>
+              <i class="fa-solid fa-lock text-lg" id="submitBtnIcon"></i>
+            </button>
+          </div>
+
+        </div>
+
+        <!-- ================= KOTAK PESAN NOTIFIKASI INDEPENDEN (DI LUAR AREA TERKUNCI) ================= -->
+        <!-- Dipindahkan ke luar lockedFormSection agar selalu tampil terang, tajam, dan tidak ikut tersamar -->
+        <div id="formAlert" class="hidden mt-6 p-5 rounded-2xl text-sm font-semibold transition-all duration-300 shadow-md"></div>
+
+      </form>
+    </section>
+
+  </main>
+
+  <!-- HTML5 Native Modal Dialog untuk Detail Kualifikasi -->
+  <dialog id="detailModal" class="p-0 rounded-3xl shadow-2xl max-w-xl w-[92%] border border-slate-200 bg-white text-slate-800">
+    <div class="bg-coal-950 text-white p-5 sm:p-6 flex items-center justify-between border-b-2 border-amber-500">
+      <div>
+        <span id="modalCategoryBadge" class="text-[10px] font-black uppercase px-2.5 py-0.5 rounded-full bg-amber-500 text-slate-950"></span>
+        <h3 id="modalJobTitle" class="text-lg font-black text-white mt-1"></h3>
+      </div>
+      <button type="button" onclick="closeDetailModal()" class="w-9 h-9 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 flex items-center justify-center transition">
+        <i class="fa-solid fa-xmark text-lg"></i>
+      </button>
+    </div>
+    
+    <div class="p-6 space-y-4 max-h-[70vh] overflow-y-auto">
+      <div>
+        <h4 class="text-xs font-black uppercase tracking-wider text-slate-400 mb-2">Persyaratan & Kualifikasi Resmi:</h4>
+        <ul id="modalRequirementsList" class="space-y-2 text-xs sm:text-sm text-slate-700 list-disc list-inside"></ul>
+      </div>
+      
+      <div class="p-4 bg-amber-50 border border-amber-200 rounded-2xl text-xs text-amber-950 space-y-2">
+        <div class="flex items-start gap-2.5">
+          <i class="fa-solid fa-shield-halved text-amber-600 text-base mt-0.5 flex-shrink-0"></i>
+          <span class="font-medium">Semua pelamar wajib mematuhi protokol K3LH tambang, bersedia bekerja sistem roster, dan lolos pemeriksaan kesehatan (MCU) Site.</span>
+        </div>
+        <div class="pt-2 border-t border-amber-200/70 text-[11px] text-amber-900 space-y-1 pl-6">
+          <p><i class="fa-solid fa-circle-dot text-[9px] text-amber-600 mr-1.5"></i><strong>Khusus Operator & Driver:</strong> Wajib memiliki SIM B2 biasa atau SIM B2 Umum yang masih aktif (SIO bersifat opsional / nilai tambah). Bersedia mengikuti tahapan tes tertulis dan tes praktek lapangan di site.</p>
+          <p><i class="fa-solid fa-circle-dot text-[9px] text-amber-600 mr-1.5"></i><strong>Khusus Admin & Storeman:</strong> Bersedia mengikuti tahapan tes tertulis dan interview online via Zoom Meeting.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="p-4 bg-slate-50 border-t border-slate-100 flex items-center justify-end gap-2.5">
+      <button type="button" onclick="closeDetailModal()" class="px-4 py-2 text-xs font-bold text-slate-600 hover:bg-slate-200 rounded-xl transition">
+        Tutup
+      </button>
+      <button type="button" id="modalApplyBtn" class="px-5 py-2.5 text-xs font-black bg-coal-900 hover:bg-amber-500 hover:text-slate-950 text-white rounded-xl transition flex items-center gap-1.5">
+        <span>Lamar Posisi Ini</span> <i class="fa-solid fa-arrow-right"></i>
+      </button>
+    </div>
+  </dialog>
+
+  <!-- Footer Resmi -->
+  <footer class="bg-coal-950 text-slate-400 text-xs py-8 px-4 border-t border-slate-800 mt-14">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
+      <div>
+        <p class="font-black text-white text-sm tracking-wide">PT KTC COAL MINING & ENERGY</p>
+        <p class="text-slate-400 text-[11px] mt-0.5">Mining Operation, Plant & Support &bull; Rekrutmen Operasional Site Muara Teweh</p>
+      </div>
+      <div class="text-center md:text-right space-y-1">
+        <p class="text-amber-400 font-bold text-[11px] flex items-center justify-center md:justify-end gap-1.5">
+          <i class="fa-solid fa-laptop-code"></i> Sistem ini dikembangkan oleh Adi Pranata
+        </p>
+        <p class="text-slate-500 text-[11px]">
+          &copy; PT KTC Coal Mining & Energy. Seluruh Hak Cipta Dilindungi Undang-Undang.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Tombol Mengambang: Gulir ke Atas (Dinaikkan untuk Iframe Google Sites di Layar HP) -->
+  <button id="btnScrollToTop" type="button" onclick="scrollToTop()" title="Kembali ke atas" aria-label="Kembali ke atas" class="fixed bottom-20 right-6 z-50 w-11 h-11 rounded-2xl bg-coal-900/90 text-amber-400 border border-amber-500/30 shadow-2xl backdrop-blur flex items-center justify-center text-sm opacity-0 translate-y-6 pointer-events-none hover:bg-amber-500 hover:text-slate-950 hover:scale-105 active:scale-95 transition-all duration-300">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <!-- Basis Data Lowongan Kerja & Logika Interaktif -->
+  <script>
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyt2wxM1hylQ-WFBXXjn2Mqk8iVbG0zspK6Vb4VSzRJ7DnmQ7vC97CH6WI4qI0rzksjqw/exec";
+
+    // Daftar 38 Kode Resmi Provinsi di Indonesia (Kemendagri)
+    const VALID_PROVINCES = [
+      "11", "12", "13", "14", "15", "16", "17", "18", "19", "21", // Sumatera
+      "31", "32", "33", "34", "35", "36",                         // Jawa
+      "51", "52", "53",                                           // Bali & Nusa Tenggara
+      "61", "62", "63", "64", "65",                               // Kalimantan (62 = Kalteng)
+      "71", "72", "73", "74", "75", "76",                         // Sulawesi
+      "81", "82",                                                 // Maluku
+      "91", "92", "93", "94", "95", "96"                          // Papua
+    ];
+
+    // Dataset Persyaratan Kualifikasi Lengkap (26 Posisi)
+    const jobQualifications = {
+      'op-1': {
+        title: "Operator Drilling Machine (DM45)",
+        category: "Operator Alat Berat",
+        selectValue: "Operator Drilling Machine (DM45)",
+        requirements: [
+          "Jenis Kelamin: Laki-laki / Perempuan (Prioritas Laki-laki untuk operasional lapangan site).",
+          "Wajib memiliki SIM B2 biasa atau SIM B2 Umum yang masih aktif.",
+          "SIO Drilling Machine bersifat opsional (menjadi nilai tambah).",
+          "Pendidikan min. SMA / SMK Sederajat.",
+          "Pengalaman min. 2-3 tahun mengoperasikan Drilling Rig (Epiroc / Ingersoll Rand DM45).",
+          "Memahami pola pemboran (burden, spacing, subdrill, blast pattern) & P2H harian.",
+          "Disiplin tinggi terhadap regulasi keselamatan kerja di area peledakan."
+        ]
+      },
+      'op-2': {
+        title: "Operator Excavator 80T Class (Hitachi ZX870 / Doosan DX800 / Volvo EC750)",
+        category: "Operator Alat Berat",
+        selectValue: "Operator Excavator 80T Class (Hitachi ZX870 / Doosan DX800 / Volvo EC750)",
+        requirements: [
+          "Jenis Kelamin: Laki-laki / Perempuan (Prioritas Laki-laki untuk operasional lapangan site).",
+          "Wajib memiliki SIM B2 biasa atau SIM B2 Umum yang masih aktif.",
+          "SIO Excavator bersifat opsional (menjadi nilai tambah).",
+          "Pendidikan min. SMA / SMK Sederajat.",
+          "Pengalaman min. 3 tahun mengoperasikan Excavator kelas 80 Ton (ZX870 / DX800 / EC750).",
+          "Menguasai teknik efisiensi loading cycle time dan safety loading ke armada DT/ADT."
+        ]
+      },
+      'op-3': {
+        title: "Operator Excavator 60T Class (Hitachi ZX670)",
+        category: "Operator Alat Berat",
+        selectValue: "Operator Excavator 60T Class (Hitachi ZX670)",
+        requirements: [
+          "Jenis Kelamin: Laki-laki / Perempuan (Prioritas Laki-laki untuk operasional lapangan site).",
+          "Wajib memiliki SIM B2 biasa atau SIM B2 Umum yang masih aktif.",
+          "SIO Excavator bersifat opsional (menjadi nilai tambah).",
+          "Pendidikan min. SMA / SMK Sederajat.",
+          "Pengalaman min. 2-3 tahun sebagai Operator Excavator 60 Ton (Hitachi ZX670 / sekelasnya).",
+          "Memahami P2H, bench loading, trenching, dan penataan sudut lereng pit tambang."
+        ]
+      },
+      'op-4': {
+        title: "Operator Excavator 40T Class (Hitachi ZX470)",
+        category: "Operator Alat Berat",
+        selectValue: "Operator Excavator 40T Class (Hitachi ZX470)",
+        requirements: [
+          "Jenis Kelamin: Laki-laki / Perempuan (Prioritas Laki-laki untuk operasional lapangan site).",
+          "Wajib memiliki SIM B2 biasa atau SIM B2 Umum yang masih aktif.",
+          "SIO Excavator bersifat opsional (menjadi nilai tambah).",
+          "Pendidikan min. SMA / SMK Sederajat.",
+          "Pengalaman min. 2 tahun mengoperasikan Excavator kelas 40 Ton (ZX470).",
+          "Paham regulasi keselamatan kerja di front penambangan terbuka."
+        ]
+      },
+      'op-5': {
+        title: "Operator Excavator 20T Class (Hitachi ZX200 - Flat / Kuku Bucket)",
+        category: "Operator Alat Berat",
+        selectValue: "Operator Excavator 20T Class (Hitachi ZX200 - Flat / Kuku Bucket)",
+        requirements: [
+          "Jenis Kelamin: Laki-laki / Perempuan (Prioritas Laki-laki untuk operasional lapangan site).",
+          "Wajib memiliki SIM B2 biasa atau SIM B2 Umum yang masih aktif.",
+          "SIO Excavator bersifat opsional (menjadi nilai tambah).",
+          "Pendidikan min. SMA / SMK Sederajat.",
+          "Pengalaman min. 2 tahun di kelas 20 Ton (Hitachi ZX200 / PC200).",
+          "Mahir menggunakan bucket kuku maupun bucket flat (pembersihan batubara bersih tanpa kontaminan)."
+        ]
+      },
+      'op-6': {
+        title: "Operator ADT (Volvo A40F / A40G)",
+        category: "Operator Alat Berat",
+        selectValue: "Operator ADT (Volvo A40F / A40G)",
+        requirements: [
+          "Jenis Kelamin: Laki-laki / Perempuan (Prioritas Laki-laki untuk operasional lapangan site).",
+          "Wajib memiliki SIM B2 biasa atau SIM B2 Umum yang masih aktif.",
+          "SIO Dump Truck / ADT bersifat opsional (menjadi nilai tambah).",
+          "Pendidikan min. SMA / SMK Sederajat.",
+          "Pengalaman min. 2-3 tahun mengoperasikan ADT Volvo A40F / A40G di site tambang.",
+          "Paham pengereman retarder, differential lock, dan dumping aman di area disposal."
+        ]
+      },
+      'op-7': {
+        title: "Operator Dozer Heavy (Komatsu D375)",
+        category: "Operator Alat Berat",
+        selectValue: "Operator Dozer Heavy (Komatsu D375)",
+        requirements: [
+          "Jenis Kelamin: Laki-laki / Perempuan (Prioritas Laki-laki untuk operasional lapangan site).",
+          "Wajib memiliki SIM B2 biasa atau SIM B2 Umum yang masih aktif.",
+          "SIO Bulldozer bersifat opsional (menjadi nilai tambah).",
+          "Pendidikan min. SMA / SMK Sederajat.",
+          "Pengalaman min. 3 tahun mengoperasikan Bulldozer Heavy Class Komatsu D375 / CAT D9.",
+          "Ahli teknik ripping penetrasi batuan, dozing cut-and-carry, dan pemeliharaan undercarriage."
+        ]
+      },
+      'op-8': {
+        title: "Operator Dozer Medium (Komatsu D85 / Shantui)",
+        category: "Operator Alat Berat",
+        selectValue: "Operator Dozer Medium (Komatsu D85 / Shantui)",
+        requirements: [
+          "Jenis Kelamin: Laki-laki / Perempuan (Prioritas Laki-laki untuk operasional lapangan site).",
+          "Wajib memiliki SIM B2 biasa atau SIM B2 Umum yang masih aktif.",
+          "SIO Bulldozer bersifat opsional (menjadi nilai tambah).",
+          "Pendidikan min. SMA / SMK Sederajat.",
+          "Pengalaman min. 2 tahun mengoperasikan Dozer D85ESS / Shantui SD22.",
+          "Mampu membuat bundwall/tanggul pengaman dan parit drainase disposal."
+        ]
+      },
+      'op-9': {
+        title: "Operator Motor Grader (SEM / CAT)",
+        category: "Operator Alat Berat",
+        selectValue: "Operator Motor Grader (SEM / CAT)",
+        requirements: [
+          "Jenis Kelamin: Laki-laki / Perempuan (Prioritas Laki-laki untuk operasional lapangan site).",
+          "Wajib memiliki SIM B2 biasa atau SIM B2 Umum yang masih aktif.",
+          "SIO Motor Grader bersifat opsional (menjadi nilai tambah).",
+          "Pendidikan min. SMA / SMK Sederajat.",
+          "Pengalaman min. 2-3 tahun mengoperasikan Motor Grader (SEM 921 / CAT 14M / sejenis).",
+          "Mahir membentuk superelevasi tikungan, cross fall jalan, dan parit jalan hauling."
+        ]
+      },
+      'op-10': {
+        title: "Operator Wheel Loader (CAT)",
+        category: "Operator Alat Berat",
+        selectValue: "Operator Wheel Loader (CAT)",
+        requirements: [
+          "Jenis Kelamin: Laki-laki / Perempuan (Prioritas Laki-laki untuk operasional lapangan site).",
+          "Wajib memiliki SIM B2 biasa atau SIM B2 Umum yang masih aktif.",
+          "SIO Wheel Loader bersifat opsional (menjadi nilai tambah).",
+          "Pendidikan min. SMA / SMK Sederajat.",
+          "Pengalaman min. 2 tahun mengoperasikan Wheel Loader (Caterpillar 950 / 966 / 980).",
+          "Menguasai teknik V-Shape loading cepat tanpa merusak bak armada dump truck."
+        ]
+      },
+      'op-11': {
+        title: "Operator Compactor (Sakai)",
+        category: "Operator Alat Berat",
+        selectValue: "Operator Compactor (Sakai)",
+        requirements: [
+          "Jenis Kelamin: Laki-laki / Perempuan (Prioritas Laki-laki untuk operasional lapangan site).",
+          "Wajib memiliki SIM B2 biasa atau SIM B2 Umum yang masih aktif.",
+          "SIO Compactor / Road Roller bersifat opsional (menjadi nilai tambah).",
+          "Pendidikan min. SMA / SMK Sederajat.",
+          "Pengalaman min. 1-2 tahun mengoperasikan Vibratory Roller (Sakai SV512 / SV525).",
+          "Paham frekuensi vibrasi pemadatan sub-base jalan dan standar CBR tambang."
+        ]
+      },
+      'op-12': {
+        title: "Driver Water Truck (Hino / Iveco)",
+        category: "Driver Tambang",
+        selectValue: "Driver Water Truck (Hino / Iveco)",
+        requirements: [
+          "Jenis Kelamin: Khusus Laki-laki.",
+          "Wajib memiliki SIM B2 biasa atau SIM B2 Umum yang masih aktif.",
+          "SIO / Sertifikat pendukung bersifat opsional (menjadi nilai tambah).",
+          "Pendidikan min. SMA / SMK Sederajat.",
+          "Pengalaman min. 2 tahun mengemudikan Water Truck 20KL/30KL di jalan tambang.",
+          "Memahami teknik semprot tanpa menimbulkan bahaya jalan licin (muddy hazards)."
+        ]
+      },
+      'op-13': {
+        title: "Driver Dump Truck (DT) (Hino / Hanvan / Howo)",
+        category: "Driver Tambang",
+        selectValue: "Driver Dump Truck (DT) (Hino / Hanvan / Howo)",
+        requirements: [
+          "Jenis Kelamin: Khusus Laki-laki.",
+          "Wajib memiliki SIM B2 biasa atau SIM B2 Umum yang masih aktif.",
+          "SIO Dump Truck bersifat opsional (menjadi nilai tambah).",
+          "Pendidikan min. SMA / SMK Sederajat.",
+          "Pengalaman min. 2 tahun mengemudikan DT tronton di hauling road tambang.",
+          "Paham keselamatan antrean loading, komunikasi radio tambang, dan dumping aman."
+        ]
+      },
+      'mc-1': {
+        title: "Mechanic HE Wheel",
+        category: "Mechanic Crew",
+        selectValue: "Mechanic HE Wheel",
+        requirements: [
+          "Jenis Kelamin: Khusus Laki-laki.",
+          "Pendidikan min. SMK Otomotif / Alat Berat / Mesin.",
+          "Pengalaman min. 2-3 tahun menangani unit alat berat roda (Wheel Loader / Motor Grader).",
+          "Diutamakan berpengalaman menangani ADT Volvo A40E / A40F / A40G.",
+          "Paham troubleshooting sistem hidrolik, brake system roda, steering, & engine.",
+          "Wajib familiar membaca & memahami Part Book serta Shop Manual.",
+          "Memiliki sertifikat Basic Mechanic Course (BMC) diutamakan."
+        ]
+      },
+      'mc-2': {
+        title: "Mechanic HE Track",
+        category: "Mechanic Crew",
+        selectValue: "Mechanic HE Track",
+        requirements: [
+          "Jenis Kelamin: Khusus Laki-laki.",
+          "Pendidikan min. SMK Otomotif / Alat Berat / Mesin.",
+          "Pengalaman min. 2-3 tahun menangani Excavator (PC-class) & Dozer (D-class).",
+          "Menguasai perbaikan undercarriage, main pump hidrolik, & final drive.",
+          "Familiar membaca Part Book serta Shop Manual unit terkait.",
+          "Memiliki sertifikat BMC merupakan nilai tambah utama."
+        ]
+      },
+      'mc-3': {
+        title: "Mechanic Dump Truck (DT)",
+        category: "Mechanic Crew",
+        selectValue: "Mechanic DT",
+        requirements: [
+          "Jenis Kelamin: Khusus Laki-laki.",
+          "Pendidikan min. SMK Otomotif / Kendaraan Ringan.",
+          "Pengalaman min. 2 tahun unit Scania, Volvo, Mercedes, atau Hino tambang.",
+          "Menguasai air brake system, differential, suspensi, & transmisi DT.",
+          "Familiar dengan general overhaul mesin diesel multi-silinder."
+        ]
+      },
+      'mc-4': {
+        title: "Electrician (Auto Electrician)",
+        category: "Mechanic Crew",
+        selectValue: "Electrician",
+        requirements: [
+          "Jenis Kelamin: Khusus Laki-laki.",
+          "Pendidikan min. SMK Ketenagalistrikan / Otomotif Elektronika.",
+          "Pengalaman min. 2 tahun sebagai Auto Electrician alat berat / DT tambang.",
+          "Mahir membaca diagram skematik perkabelan (wiring diagram).",
+          "Paham sistem starting, alternator, sensor-sensor, & ECM."
+        ]
+      },
+      'mc-5': {
+        title: "Fabrikasi (Welder / Bodywork)",
+        category: "Mechanic Crew",
+        selectValue: "Fabrikasi (Welder, Bodywork, Line Boring)",
+        requirements: [
+          "Jenis Kelamin: Khusus Laki-laki.",
+          "Pendidikan min. SMK Teknik Pengelasan / Fabrikasi Logam.",
+          "Pengalaman min. 2 tahun pengelasan struktur alat berat.",
+          "Menguasai teknik las SMAW/FCAW dan gouging (Sertifikat 3G/4G/6G nilai plus).",
+          "Familiar dengan pekerjaan line boring / perbaikan chassis."
+        ]
+      },
+      'mc-6': {
+        title: "Tyreman (Spesialis Ban Tambang)",
+        category: "Mechanic Crew",
+        selectValue: "Tyreman",
+        requirements: [
+          "Jenis Kelamin: Khusus Laki-laki.",
+          "Pendidikan min. SMA / SMK Sederajat.",
+          "Pengalaman min. 1-2 tahun ban OTR (Off-The-Road) dan Dump Truck.",
+          "Menguasai bongkar-pasang ban, torque wheel nut, rotasi ban, & K3 tekanan tinggi."
+        ]
+      },
+      'mc-7': {
+        title: "Maintenance Servicing Mechanic",
+        category: "Mechanic Crew",
+        selectValue: "Maintenance Servicing Mechanic",
+        requirements: [
+          "Jenis Kelamin: Khusus Laki-laki.",
+          "Pendidikan min. SMK Otomotif / Mesin / Alat Berat.",
+          "Pengalaman min. 1-2 tahun preventive maintenance alat berat/DT.",
+          "Diutamakan memiliki SIM B2 Umum aktif (operasi Lube Truck).",
+          "Memahami jadwal Periodic Service (PS 250, 500, 1000, 2000 HM) & sampling oli."
+        ]
+      },
+      'sp-1': {
+        title: "Warehouse Team (Storeman)",
+        category: "Tim Support",
+        selectValue: "Warehouse Team (Storeman)",
+        requirements: [
+          "Jenis Kelamin: Khusus Laki-laki.",
+          "Pendidikan min. SMA / SMK (Otomotif/Logistik disukai).",
+          "Pengalaman min. 1-2 tahun Storeman suku cadang tambang.",
+          "Menguasai binning rak & administrasi stok (SIO Forklift nilai plus).",
+          "Bersedia mengikuti tahapan tes tertulis dan interview online via Zoom Meeting."
+        ]
+      },
+      'sp-2': {
+        title: "Driver Fuel Truck (FT)",
+        category: "Tim Support",
+        selectValue: "Driver Fuel Truck (FT)",
+        requirements: [
+          "Jenis Kelamin: Khusus Laki-laki.",
+          "Pendidikan min. SMA / SMK Sederajat.",
+          "Wajib memiliki SIM B2 Umum yang masih aktif.",
+          "Pengalaman min. 2 tahun supir tangki solar di site tambang."
+        ]
+      },
+      'sp-3': {
+        title: "Fuelman",
+        category: "Tim Support",
+        selectValue: "Fuelman",
+        requirements: [
+          "Jenis Kelamin: Khusus Laki-laki.",
+          "Pendidikan min. SMA / SMK Sederajat.",
+          "Pengalaman min. 1 tahun di industri pertambangan / konstruksi.",
+          "Teliti dan jujur dalam pencatatan meteran & kepatuhan K3 grounding."
+        ]
+      },
+      'sp-4': {
+        title: "Driver Lowboy Trailer",
+        category: "Tim Support",
+        selectValue: "Driver Lowboy",
+        requirements: [
+          "Jenis Kelamin: Khusus Laki-laki.",
+          "Pendidikan min. SMA / SMK Sederajat.",
+          "Wajib memiliki SIM B2 Umum aktif.",
+          "Pengalaman min. 3 tahun lowbed trailer membawa alat berat tambang.",
+          "Menguasai teknik lashing pengikatan beban berat bersertifikasi."
+        ]
+      },
+      'sp-5': {
+        title: "Admin Workshop",
+        category: "Tim Support & Admin",
+        selectValue: "Admin Workshop",
+        requirements: [
+          "Jenis Kelamin: Laki-laki / Perempuan (Prioritas Laki-laki untuk operasional site tambang).",
+          "Minimal D3 / S1 (Teknik Mesin, Industri, Administrasi).",
+          "Pengalaman min. 1 tahun Admin Workshop tambang / heavy equipment.",
+          "Mahir MS Excel, rekap Daily Maintenance Report (DMR), & alur Backlog.",
+          "Bersedia mengikuti tahapan tes tertulis dan interview online via Zoom Meeting."
+        ]
+      },
+      'sp-6': {
+        title: "Admin Warehouse",
+        category: "Tim Support & Admin",
+        selectValue: "Admin Warehouse",
+        requirements: [
+          "Jenis Kelamin: Laki-laki / Perempuan (Prioritas Laki-laki untuk operasional site tambang).",
+          "Minimal D3 / S1 (Akuntansi, Logistik, Administrasi).",
+          "Pengalaman min. 1-2 tahun Admin Gudang / Inventory Control suku cadang.",
+          "Keahlian formula VLOOKUP, Pivot Table, serta sistem ERP / SAP / Odoo.",
+          "Bersedia mengikuti tahapan tes tertulis dan interview online via Zoom Meeting."
+        ]
+      }
+    };
+
+    let currentCategory = 'all';
+
+    // Filter Kategori & Pencarian Real-Time
+    function setCategory(cat) {
+      currentCategory = cat;
+      const btnAll = document.getElementById('btn-all');
+      const btnOp = document.getElementById('btn-operator');
+      const btnMech = document.getElementById('btn-mechanic');
+      const btnSupp = document.getElementById('btn-support');
+
+      [btnAll, btnOp, btnMech, btnSupp].forEach(b => {
+        b.className = "px-3.5 py-2 rounded-xl text-slate-600 hover:text-slate-900 transition";
+      });
+
+      if (cat === 'all') btnAll.className = "px-3.5 py-2 rounded-xl bg-white text-slate-900 shadow-sm transition font-bold";
+      if (cat === 'operator') btnOp.className = "px-3.5 py-2 rounded-xl bg-white text-slate-900 shadow-sm transition font-bold";
+      if (cat === 'mechanic') btnMech.className = "px-3.5 py-2 rounded-xl bg-white text-slate-900 shadow-sm transition font-bold";
+      if (cat === 'support') btnSupp.className = "px-3.5 py-2 rounded-xl bg-white text-slate-900 shadow-sm transition font-bold";
+
+      applyFilters();
+    }
+
+    function applyFilters() {
+      const searchVal = document.getElementById('liveSearchInput').value.toLowerCase().trim();
+      const clearBtn = document.getElementById('clearSearchBtn');
+      const cards = document.querySelectorAll('.job-card');
+      const noResult = document.getElementById('noResultState');
+
+      if (searchVal.length > 0) {
+        clearBtn.classList.remove('hidden');
+      } else {
+        clearBtn.classList.add('hidden');
+      }
+
+      let visibleCount = 0;
+
+      cards.forEach(card => {
+        const cardCat = card.dataset.category;
+        const cardTitle = card.dataset.title.toLowerCase();
+
+        const matchCat = (currentCategory === 'all' || cardCat === currentCategory);
+        const matchSearch = (!searchVal || cardTitle.includes(searchVal));
+
+        if (matchCat && matchSearch) {
+          card.classList.remove('hidden');
+          visibleCount++;
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+
+      if (visibleCount === 0) {
+        noResult.classList.remove('hidden');
+      } else {
+        noResult.classList.add('hidden');
+      }
+    }
+
+    function clearSearch() {
+      document.getElementById('liveSearchInput').value = "";
+      applyFilters();
+    }
+
+    // Modal Dialog Logic
+    const modal = document.getElementById('detailModal');
+    function openDetailModal(jobId) {
+      const job = jobQualifications[jobId];
+      if (!job) return;
+
+      document.getElementById('modalCategoryBadge').textContent = job.category;
+      document.getElementById('modalJobTitle').textContent = job.title;
+
+      const listEl = document.getElementById('modalRequirementsList');
+      listEl.innerHTML = "";
+      job.requirements.forEach(req => {
+        const li = document.createElement('li');
+        li.textContent = req;
+        listEl.appendChild(li);
+      });
+
+      const applyBtn = document.getElementById('modalApplyBtn');
+      applyBtn.onclick = function() {
+        closeDetailModal();
+        pilihLoker(job.selectValue);
+      };
+
+      modal.showModal();
+    }
+
+    function closeDetailModal() {
+      modal.close();
+    }
+
+    modal.addEventListener('click', function(e) {
+      const rect = modal.getBoundingClientRect();
+      const isInDialog = (rect.top <= e.clientY && e.clientY <= rect.top + rect.height &&
+        rect.left <= e.clientX && e.clientX <= rect.left + rect.width);
+      if (!isInDialog) {
+        modal.close();
+      }
+    });
+
+    function pilihLoker(posisiNama) {
+      const select = document.getElementById('posisiSelect');
+      for (let i = 0; i < select.options.length; i++) {
+        if (select.options[i].value === posisiNama) {
+          select.selectedIndex = i;
+          break;
+        }
+      }
+      calculateFormProgress();
+      const formEl = document.getElementById('formLamar');
+      if (formEl) formEl.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // ================= LAPIS 1: ALGORITMA PARSER STRUKTUR NIK =================
+    function validateNikStructure(nik, usiaVal, genderVal) {
+      if (!/^\d{16}$/.test(nik)) {
+        return { valid: false, reason: "NIK harus berjumlah tepat 16 digit angka." };
+      }
+
+      // 1. Cek Digit 1-2: Kode Provinsi Resmi Kemendagri
+      const provCode = nik.substring(0, 2);
+      if (!VALID_PROVINCES.includes(provCode)) {
+        return { valid: false, reason: "Kode provinsi (digit 1-2) tidak terdaftar dalam database Kemendagri." };
+      }
+
+      // 2. Cek Digit 3-6: Kode Kab/Kota dan Kecamatan tidak boleh 0000
+      const kabKecCode = nik.substring(2, 6);
+      if (kabKecCode === "0000" || nik.substring(2, 4) === "00" || nik.substring(4, 6) === "00") {
+        return { valid: false, reason: "Kode wilayah kabupaten/kecamatan pada digit 3-6 tidak valid." };
+      }
+
+      // 3. Cek Digit 7-8: Tanggal Lahir (Laki-laki 01-31, Perempuan 41-71)
+      const rawTanggal = parseInt(nik.substring(6, 8), 10);
+      let tglSebenarnya = rawTanggal;
+
+      if (genderVal === "Laki-laki") {
+        if (rawTanggal < 1 || rawTanggal > 31) {
+          return { valid: false, reason: "Digit tanggal lahir (01-31) tidak sesuai untuk profil Laki-laki." };
+        }
+        tglSebenarnya = rawTanggal;
+      } else if (genderVal === "Perempuan") {
+        if (rawTanggal < 41 || rawTanggal > 71) {
+          return { valid: false, reason: "Digit tanggal lahir KTP perempuan resmi harus bernilai antara 41 - 71 (+40)." };
+        }
+        tglSebenarnya = rawTanggal - 40;
+      } else {
+        if (!((rawTanggal >= 1 && rawTanggal <= 31) || (rawTanggal >= 41 && rawTanggal <= 71))) {
+          return { valid: false, reason: "Susunan digit tanggal lahir pada NIK tidak valid." };
+        }
+        tglSebenarnya = rawTanggal > 40 ? (rawTanggal - 40) : rawTanggal;
+      }
+
+      // 4. Cek Digit 9-10: Bulan Lahir (01-12)
+      const rawBulan = parseInt(nik.substring(8, 10), 10);
+      if (rawBulan < 1 || rawBulan > 12) {
+        return { valid: false, reason: "Digit bulan lahir (01-12) pada NIK tidak sesuai kalender resmi." };
+      }
+
+      // 5. Cek Digit 11-12: Tahun Lahir & Validasi Hari Riil dalam Bulan (Cegah tgl fiktif 31 Feb/Apr)
+      const currentYear = new Date().getFullYear();
+      const nikTahun2Digit = parseInt(nik.substring(10, 12), 10);
+      let birthYear = (nikTahun2Digit > (currentYear % 100)) ? (1900 + nikTahun2Digit) : (2000 + nikTahun2Digit);
+
+      const maxDaysInMonth = new Date(birthYear, rawBulan, 0).getDate();
+      if (tglSebenarnya > maxDaysInMonth) {
+        return { 
+          valid: false, 
+          reason: `Tanggal lahir (${tglSebenarnya}) melebihi jumlah hari kalender untuk bulan ${rawBulan} (maksimal ${maxDaysInMonth} hari).` 
+        };
+      }
+
+      // Korelasi Usia vs Tahun Lahir
+      if (usiaVal && parseInt(usiaVal, 10) >= 18) {
+        const usia = parseInt(usiaVal, 10);
+        let calculatedAge = currentYear - birthYear;
+
+        // Toleransi selisih tahun kelahiran maksimal 2 tahun
+        if (Math.abs(calculatedAge - usia) > 2) {
+          return { valid: false, reason: `Tahun lahir pada NIK (${birthYear}) tidak selaras dengan usia yang Anda masukkan (${usia} tahun).` };
+        }
+      }
+
+      // 6. Cek Digit 13-16: Nomor Seri Urut (Nilai 0000 diperbolehkan)
+      const serial = nik.substring(12, 16);
+      if (serial === "1111" || serial === "9999" || serial === "1234") {
+        return { valid: false, reason: "Nomor seri urut (4 digit terakhir) tidak memenuhi standar e-KTP sah." };
+      }
+
+      return { valid: true };
+    }
+
+    // Normalisasi input WhatsApp secara realtime (Format Standar Lokal Awalan '0')
+    function handleWaInput(input) {
+      input.value = input.value.replace(/[^0-9]/g, '');
+      calculateFormProgress();
+    }
+
+    // Pemformatan input Gaji dengan pemisah ribuan otomatis
+    function handleGajiInput(input) {
+      let raw = input.value.replace(/[^0-9]/g, '');
+      if (raw) {
+        input.value = parseInt(raw, 10).toLocaleString('id-ID');
+      } else {
+        input.value = '';
+      }
+      calculateFormProgress();
+    }
+
+    function formatWhatsAppNumber(phone) {
+      if (!phone) return "";
+      let cleaned = phone.replace(/[^0-9]/g, '');
+      if (cleaned.startsWith('62')) {
+        cleaned = '0' + cleaned.substring(2);
+      } else if (cleaned.startsWith('8')) {
+        cleaned = '0' + cleaned;
+      }
+      return cleaned;
+    }
+
+    // ================= VALIDASI INSTAN NIK & PENGAMAN SERVER =================
+    let isNikVerified = false;
+    let lastCheckedNik = "";
+    let nikDebounceTimer = null;
+
+    function checkNikInputAvailability() {
+      const genderVal = document.getElementById('genderInput').value;
+      const usiaVal = document.getElementById('usiaInput').value;
+      const ktpInput = document.getElementById('ktpInput');
+      const nikBadge = document.getElementById('nikLockBadge');
+      const statusIcon = document.getElementById('nikStatusIcon');
+      const feedbackEl = document.getElementById('nikFeedback');
+
+      const isPrerequisiteMet = Boolean(genderVal && usiaVal && parseInt(usiaVal, 10) >= 18);
+
+      if (!isPrerequisiteMet) {
+        ktpInput.disabled = true;
+        ktpInput.classList.add('cursor-not-allowed', 'opacity-75', 'bg-slate-100');
+        ktpInput.classList.remove('bg-white');
+        ktpInput.placeholder = "Pilih Gender & Usia dulu";
+        
+        if (nikBadge) {
+          nikBadge.className = "text-[10px] font-extrabold text-slate-600 bg-slate-100 px-2 py-0.5 rounded border border-slate-200";
+          nikBadge.innerHTML = '<i class="fa-solid fa-lock text-[9px] mr-1"></i>Terkunci';
+        }
+        
+        statusIcon.innerHTML = '<i class="fa-solid fa-lock text-slate-400"></i>';
+        
+        if (!ktpInput.value) {
+          feedbackEl.className = "text-[11px] font-medium text-slate-500 pt-1";
+          feedbackEl.innerHTML = '<i class="fa-solid fa-circle-info text-amber-500 mr-1"></i>Pilih Jenis Kelamin dan isi Usia (min. 18 tahun) terlebih dahulu untuk membuka kolom NIK.';
+        }
+        return false;
+      } else {
+        const wasDisabled = ktpInput.disabled;
+        ktpInput.disabled = false;
+        ktpInput.classList.remove('cursor-not-allowed', 'opacity-75', 'bg-slate-100');
+        ktpInput.classList.add('bg-white');
+        ktpInput.placeholder = "16 digit angka e-KTP";
+
+        if (nikBadge) {
+          nikBadge.className = "text-[10px] font-extrabold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200";
+          nikBadge.innerHTML = '<i class="fa-solid fa-id-card text-[10px] mr-1"></i>Siap Diisi';
+        }
+
+        if (wasDisabled && !ktpInput.value) {
+          statusIcon.innerHTML = '<i class="fa-solid fa-id-card text-slate-400"></i>';
+          feedbackEl.className = "text-[11px] font-medium text-slate-500 pt-1";
+          feedbackEl.textContent = "Masukkan 16 digit angka e-KTP resmi untuk verifikasi sistem database.";
+        }
+        return true;
+      }
+    }
+
+    // Mengunci atau Membuka Seluruh Formulir Lanjutan (Bagian 3)
+    function setSubsequentFormLock(isLocked) {
+      const section = document.getElementById('lockedFormSection');
+      const gateBadge = document.getElementById('gateStatusBadge');
+      const gateIcon = document.getElementById('gateStatusIcon');
+      const gateText = document.getElementById('gateStatusText');
+      const lockBanner = document.getElementById('lockInstructionBanner');
+
+      // Daftar elemen input di tahap lanjutan (posisiSelect TIDAK DIKUNCI LAGI karena berada di Bagian 1 paling atas)
+      const subsequentInputs = [
+        document.getElementById('waInput'),
+        document.getElementById('pendidikanInput'),
+        document.getElementById('agamaInput'),
+        document.getElementById('golDarahInput'),
+        document.getElementById('wilayahInput'),
+        document.getElementById('kotaInput'),
+        document.getElementById('tinggiBadanInput'),
+        document.getElementById('beratBadanInput'),
+        document.getElementById('statusNikahInput'),
+        document.getElementById('pengalamanInput'),
+        document.getElementById('sertifikasiInput'),
+        document.getElementById('pengalamanSingkatInput'),
+        document.getElementById('statusKerjaInput'),
+        document.getElementById('noticePeriodInput'),
+        document.getElementById('gajiInput'),
+        document.getElementById('komitmenRosterCheck'),
+        document.getElementById('integritasCheck')
+      ];
+
+      const simCheckboxes = document.querySelectorAll('.sim-check');
+
+      if (isLocked) {
+        section.classList.add('opacity-40', 'pointer-events-none', 'select-none', 'filter', 'blur-[0.3px]');
+        section.classList.remove('opacity-100');
+
+        subsequentInputs.forEach(el => {
+          if (el) el.disabled = true;
+        });
+        simCheckboxes.forEach(cb => cb.disabled = true);
+
+        if (gateBadge) {
+          gateBadge.className = "inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-black bg-slate-200 text-slate-700 w-fit";
+          gateIcon.className = "fa-solid fa-lock text-[10px]";
+          gateText.textContent = "Formulir Lanjutan Terkunci";
+        }
+
+        // Tampilkan Lock Banner
+        if (lockBanner) {
+          lockBanner.classList.remove('hidden');
+        }
+      } else {
+        section.classList.remove('opacity-40', 'pointer-events-none', 'select-none', 'filter', 'blur-[0.3px]');
+        section.classList.add('opacity-100');
+
+        subsequentInputs.forEach(el => {
+          if (el) el.disabled = false;
+        });
+        simCheckboxes.forEach(cb => cb.disabled = false);
+
+        if (gateBadge) {
+          gateBadge.className = "inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-black bg-emerald-100 text-emerald-800 border border-emerald-300 w-fit";
+          gateIcon.className = "fa-solid fa-lock-open text-[10px]";
+          gateText.textContent = "Akses Formulir Terbuka";
+        }
+
+        // Sembunyikan Lock Banner dengan mulus saat NIK berhasil terverifikasi
+        if (lockBanner) {
+          lockBanner.classList.add('hidden');
+        }
+      }
+    }
+
+    function onUsiaOrGenderChange() {
+      const isAvailable = checkNikInputAvailability();
+      calculateFormProgress();
+      const ktpInput = document.getElementById('ktpInput');
+      
+      if (isAvailable && ktpInput.value.length === 16) {
+        handleNikInput(ktpInput);
+      } else if (!isAvailable) {
+        isNikVerified = false;
+        setSubsequentFormLock(true);
+        lockCvAndSubmit("waiting");
+      }
+    }
+
+    function clearNikInput() {
+      const ktpInput = document.getElementById('ktpInput');
+      ktpInput.value = "";
+      isNikVerified = false;
+      lastCheckedNik = "";
+      clearTimeout(nikDebounceTimer);
+
+      document.getElementById('btnResetNik').classList.add('hidden');
+      setNikFeedback("waiting", "Masukkan 16 digit angka e-KTP resmi untuk verifikasi sistem database.");
+      setSubsequentFormLock(true);
+      lockCvAndSubmit("waiting");
+      calculateFormProgress();
+      ktpInput.focus();
+    }
+
+    function handleNikInput(input) {
+      if (!checkNikInputAvailability()) return;
+      input.value = input.value.replace(/[^0-9]/g, '');
+      const nik = input.value.trim();
+      const usiaVal = document.getElementById('usiaInput').value;
+      const genderVal = document.getElementById('genderInput').value;
+      const btnResetNik = document.getElementById('btnResetNik');
+
+      if (nik.length > 0) {
+        btnResetNik.classList.remove('hidden');
+      } else {
+        btnResetNik.classList.add('hidden');
+      }
+      
+      calculateFormProgress();
+
+      if (nik.length < 16) {
+        isNikVerified = false;
+        lastCheckedNik = "";
+        setSubsequentFormLock(true);
+        lockCvAndSubmit("waiting");
+        setNikFeedback("waiting", "Masukkan 16 digit angka e-KTP resmi (" + nik.length + "/16 digit)");
+        return;
+      }
+
+      if (nik.length === 16) {
+        const algCheck = validateNikStructure(nik, usiaVal, genderVal);
+        if (!algCheck.valid) {
+          isNikVerified = false;
+          lastCheckedNik = nik;
+          setSubsequentFormLock(true);
+          setNikFeedback("invalid_structure", "Format NIK tidak valid: " + algCheck.reason);
+          lockCvAndSubmit("blocked");
+          return;
+        }
+
+        if (nik !== lastCheckedNik) {
+          clearTimeout(nikDebounceTimer);
+          nikDebounceTimer = setTimeout(() => {
+            verifyNikRealtime(nik);
+          }, 350);
+        }
+      }
+    }
+
+    function verifyNikRealtime(nik) {
+      lastCheckedNik = nik;
+      setNikFeedback("loading", "Memverifikasi NIK di database KTC");
+      setSubsequentFormLock(true);
+      lockCvAndSubmit("loading");
+
+      const checkUrl = SCRIPT_URL + "?action=checkNik&nik=" + encodeURIComponent(nik);
+
+      fetch(checkUrl, {
+        method: 'GET',
+        redirect: 'follow',
+        headers: {
+          'Accept': 'application/json'
+        }
+      })
+      .then(async res => {
+        const rawText = await res.text();
+        try {
+          return JSON.parse(rawText);
+        } catch (parseErr) {
+          // Jika respons diawali <!DOCTYPE, berarti Google mengembalikan halaman HTML login / izin akses
+          if (rawText.trim().startsWith('<') || rawText.includes('<!DOCTYPE')) {
+            throw new Error("Akses Google Apps Script tertolak / membutuhkan login. Pastikan setelan deployment 'Who has access' adalah 'Anyone'.");
+          }
+          throw new Error("Format respons server tidak valid: " + parseErr.message);
+        }
+      })
+      .then(res => {
+        if (res.status === "clear") {
+          isNikVerified = true;
+          setNikFeedback("clear", res.message || "Struktur NIK sah dan memenuhi kualifikasi seleksi.");
+          setSubsequentFormLock(false);
+          unlockCvAndSubmit();
+
+          // Arahkan fokus ke input WhatsApp setelah pembukaan form
+          const waInput = document.getElementById('waInput');
+          if (waInput && !waInput.value) {
+            waInput.focus();
+          }
+        } else if (res.status === "blacklist") {
+          isNikVerified = false;
+          setSubsequentFormLock(true);
+          setNikFeedback("blacklist", res.message || "Mohon maaf, berdasarkan verifikasi data administratif internal perusahaan, profil NIK Anda saat ini belum memenuhi kriteria kebijakan operasional PT KTC Coal Mining & Energy. Pengajuan lamaran tidak dapat dilanjutkan.");
+          lockCvAndSubmit("blocked");
+        } else if (res.status === "in_process") {
+          isNikVerified = false;
+          setSubsequentFormLock(true);
+          setNikFeedback("in_process", res.message || "NIK masih dalam proses seleksi (belum melewati masa tunggu 6 bulan).");
+          lockCvAndSubmit("blocked");
+        } else {
+          isNikVerified = false;
+          setSubsequentFormLock(true);
+          setNikFeedback("error", res.message || "Gagal verifikasi NIK. Periksa kembali data Anda.");
+          lockCvAndSubmit("blocked");
+        }
+        calculateFormProgress();
+      })
+      .catch(err => {
+        console.error("Gagal menghubungi server verifikasi:", err);
+        isNikVerified = false;
+        setSubsequentFormLock(true);
+        
+        let pesanUser = "";
+        if (err.message && err.message.includes("Who has access")) {
+          pesanUser = `<div class="space-y-1">
+            <div class="font-bold text-rose-700 flex items-center gap-1.5"><i class="fa-solid fa-lock"></i> Pengaturan Deployment Google Apps Script Belum Terbuka</div>
+            <p class="text-slate-600">Akses Google Script tertolak karena butuh izin login. Buka Google Sheets &gt; Extensions &gt; Apps Script &gt; <strong>Deploy</strong> &gt; <strong>Manage deployments</strong>, lalu pastikan <strong>Who has access: Anyone</strong> (bukan Only myself).</p>
+          </div>`;
+        } else {
+          pesanUser = `Gagal memverifikasi ke database pusat (${err.message}). Pastikan koneksi internet stabil.`;
+        }
+        
+        setNikFeedback("error_html", pesanUser);
+        lockCvAndSubmit("blocked");
+        calculateFormProgress();
+      });
+    }
+
+    function setNikFeedback(status, msg) {
+      const iconEl = document.getElementById('nikStatusIcon');
+      const textEl = document.getElementById('nikFeedback');
+      const inputEl = document.getElementById('ktpInput');
+
+      inputEl.classList.remove('border-red-500', 'border-emerald-500', 'border-amber-500', 'border-slate-300', 'border-rose-400');
+
+      if (status === "loading") {
+        iconEl.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin text-amber-500 text-sm"></i>';
+        textEl.className = "text-[11px] mt-1.5 font-semibold text-amber-600 flex items-center gap-1.5";
+        textEl.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> ' + msg;
+        inputEl.classList.add('border-amber-500');
+      } else if (status === "clear") {
+        iconEl.innerHTML = '<i class="fa-solid fa-circle-check text-emerald-600 text-base"></i>';
+        textEl.className = "text-[11px] mt-1.5 font-bold text-emerald-600 flex items-center gap-1.5";
+        textEl.innerHTML = '<i class="fa-solid fa-circle-check"></i> ' + msg;
+        inputEl.classList.add('border-emerald-500');
+      } else if (status === "invalid_structure") {
+        iconEl.innerHTML = '<i class="fa-solid fa-circle-xmark text-rose-600 text-base"></i>';
+        textEl.className = "text-[11px] mt-2 font-medium text-slate-700 bg-rose-50/90 p-3 rounded-xl border border-rose-200/80 shadow-xs space-y-1";
+        textEl.innerHTML = '<div class="flex items-center gap-1.5 text-rose-700 font-bold text-xs"><i class="fa-solid fa-shield-halved"></i> Validasi Struktur NIK Tidak Sesuai</div><p class="leading-relaxed text-slate-600">' + msg + '</p>';
+        inputEl.classList.add('border-rose-400');
+      } else if (status === "blacklist") {
+        iconEl.innerHTML = '<i class="fa-solid fa-circle-exclamation text-rose-600 text-base"></i>';
+        textEl.className = "text-[11px] mt-2 font-medium text-slate-700 bg-rose-50/90 p-3 rounded-xl border border-rose-200/80 shadow-xs space-y-1";
+        textEl.innerHTML = '<div class="flex items-center gap-1.5 text-rose-700 font-bold text-xs"><i class="fa-solid fa-triangle-exclamation"></i> Pemberitahuan Verifikasi Administratif</div><p class="leading-relaxed text-slate-600">' + msg + '</p>';
+        inputEl.classList.add('border-rose-400');
+      } else if (status === "in_process") {
+        iconEl.innerHTML = '<i class="fa-solid fa-triangle-exclamation text-amber-600 text-base"></i>';
+        textEl.className = "text-[11px] mt-2 font-medium text-slate-700 bg-amber-50/90 p-3 rounded-xl border border-amber-200/80 shadow-xs space-y-1";
+        textEl.innerHTML = '<div class="flex items-center gap-1.5 text-amber-800 font-bold text-xs"><i class="fa-solid fa-clock-rotate-left"></i> Status Lamaran Masih Aktif</div><p class="leading-relaxed text-slate-600">' + msg + '</p>';
+        inputEl.classList.add('border-amber-500');
+      } else if (status === "error_html") {
+        iconEl.innerHTML = '<i class="fa-solid fa-triangle-exclamation text-rose-500 text-base"></i>';
+        textEl.className = "text-[11px] mt-2 p-3 bg-rose-50 border border-rose-200 rounded-xl";
+        textEl.innerHTML = msg;
+        inputEl.classList.add('border-rose-400');
+      } else {
+        iconEl.innerHTML = '<i class="fa-solid fa-id-card text-slate-400"></i>';
+        textEl.className = "text-[11px] mt-1.5 font-medium text-slate-500";
+        textEl.textContent = msg;
+        inputEl.classList.add('border-slate-300');
+      }
+    }
+
+    function lockCvAndSubmit(state) {
+      const dropZone = document.getElementById('dropZone');
+      const fileUploadInput = document.getElementById('file-upload');
+      const badge = document.getElementById('cvLockStatusBadge');
+      const iconBox = document.getElementById('dropZoneIconBox');
+      const dropZoneIcon = document.getElementById('dropZoneIcon');
+      const mainText = document.getElementById('dropZoneMainText');
+
+      fileUploadInput.disabled = true;
+      dropZone.classList.remove('unlock-animated');
+      dropZone.classList.add('opacity-60', 'pointer-events-none', 'cursor-not-allowed', 'bg-slate-100');
+      dropZone.classList.remove('hover:bg-amber-50/30', 'hover:border-amber-500', 'cursor-pointer');
+
+      updateSubmitButtonState();
+
+      if (state === "blocked") {
+        badge.className = "text-[10px] font-black uppercase px-2.5 py-0.5 rounded-full bg-rose-100 text-rose-800 border border-rose-300";
+        badge.innerHTML = '<i class="fa-solid fa-shield-halved mr-1"></i> Tidak Memenuhi Kriteria';
+        iconBox.className = "w-16 h-16 mx-auto rounded-2xl bg-rose-100 text-rose-600 flex items-center justify-center text-3xl shadow-xs transition";
+        if (dropZoneIcon) dropZoneIcon.className = "fa-solid fa-ban";
+        mainText.innerHTML = '<span class="text-rose-700 font-bold">Akses pengunggahan berkas ditutup sesuai ketentuan verifikasi kebijakan internal.</span>';
+      } else {
+        badge.className = "text-[10px] font-black uppercase px-2.5 py-0.5 rounded-full bg-slate-200 text-slate-600";
+        badge.innerHTML = '<i class="fa-solid fa-lock mr-1"></i> Terkunci (Verifikasi NIK)';
+        iconBox.className = "w-16 h-16 mx-auto rounded-2xl bg-slate-200 text-slate-500 flex items-center justify-center text-3xl shadow-xs transition";
+        if (dropZoneIcon) dropZoneIcon.className = "fa-solid fa-lock";
+        mainText.innerHTML = 'Masukkan 16 digit NIK yang valid terlebih dahulu untuk membuka kunci unggah CV';
+      }
+    }
+
+    function unlockCvAndSubmit() {
+      const dropZone = document.getElementById('dropZone');
+      const fileUploadInput = document.getElementById('file-upload');
+      const badge = document.getElementById('cvLockStatusBadge');
+      const iconBox = document.getElementById('dropZoneIconBox');
+      const dropZoneIcon = document.getElementById('dropZoneIcon');
+      const mainText = document.getElementById('dropZoneMainText');
+
+      fileUploadInput.disabled = false;
+      dropZone.classList.remove('opacity-60', 'pointer-events-none', 'cursor-not-allowed', 'bg-slate-100');
+      dropZone.classList.add('hover:bg-amber-50/30', 'hover:border-amber-500', 'cursor-pointer', 'unlock-animated');
+
+      badge.className = "text-[10px] font-black uppercase px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800 border border-emerald-300 transition-all duration-300 scale-105";
+      badge.innerHTML = '<i class="fa-solid fa-lock-open mr-1"></i> Terbuka (Siap Unggah)';
+
+      iconBox.className = "w-16 h-16 mx-auto rounded-2xl bg-emerald-100 text-emerald-600 flex items-center justify-center text-3xl shadow-xs group-hover:scale-105 transition-all duration-300";
+      if (dropZoneIcon) dropZoneIcon.className = "fa-solid fa-lock-open";
+      mainText.innerHTML = '<span class="text-amber-600 underline font-black">Klik untuk memilih berkas</span> atau seret file ke sini';
+
+      setTimeout(() => {
+        badge.classList.remove('scale-105');
+      }, 350);
+
+      updateSubmitButtonState();
+    }
+
+    // Manajemen Berkas CV & HTML5 Drag and Drop API
+    let fileBase64Data = null;
+    let fileNameData = null;
+    let fileTypeData = null;
+
+    const dropZone = document.getElementById('dropZone');
+    const fileUploadInput = document.getElementById('file-upload');
+
+    dropZone.addEventListener('click', () => {
+      if (!fileUploadInput.disabled) {
+        fileUploadInput.click();
+      }
+    });
+
+    ['dragenter', 'dragover'].forEach(eventName => {
+      dropZone.addEventListener(eventName, (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        if (!fileUploadInput.disabled) {
+          dropZone.classList.add('drag-over');
+        }
+      }, false);
+    });
+
+    ['dragleave', 'drop'].forEach(eventName => {
+      dropZone.addEventListener(eventName, (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        dropZone.classList.remove('drag-over');
+      }, false);
+    });
+
+    dropZone.addEventListener('drop', (e) => {
+      if (fileUploadInput.disabled) return;
+      const dt = e.dataTransfer;
+      const files = dt.files;
+      handleFileSelected(files);
+    });
+
+    function handleFileSelected(files) {
+      if (fileUploadInput.disabled) return;
+      if (files && files.length > 0) {
+        const file = files[0];
+
+        const allowedExtensions = /(\.pdf|\.doc|\.docx)$/i;
+        if (!allowedExtensions.exec(file.name)) {
+          showNotification("Hanya berkas format PDF atau DOCX yang diperbolehkan!", "error");
+          removeSelectedFile();
+          return;
+        }
+
+        if (file.size > 10 * 1024 * 1024) {
+          showNotification("Ukuran berkas melebihi 10 MB. Silakan kompres berkas Anda.", "error");
+          removeSelectedFile();
+          return;
+        }
+
+        fileNameData = file.name;
+        fileTypeData = file.type || "application/pdf";
+
+        const sizeInMb = (file.size / (1024 * 1024)).toFixed(2);
+        document.getElementById('selectedFileName').textContent = file.name;
+        document.getElementById('selectedFileSize').textContent = `Ukuran: ${sizeInMb} MB &bull; Berkas siap diunggah`;
+
+        document.getElementById('dropZoneIdle').classList.add('hidden');
+        document.getElementById('dropZoneActive').classList.remove('hidden');
+        document.getElementById('dropZoneActive').classList.add('flex');
+
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          fileBase64Data = e.target.result.split(',')[1];
+          calculateFormProgress();
+          updateSubmitButtonState();
+        };
+        reader.readAsDataURL(file);
+      }
+    }
+
+    function removeSelectedFile(e) {
+      if (e) e.stopPropagation();
+      fileUploadInput.value = "";
+      fileBase64Data = null;
+      fileNameData = null;
+      fileTypeData = null;
+
+      document.getElementById('dropZoneActive').classList.add('hidden');
+      document.getElementById('dropZoneActive').classList.remove('flex');
+      document.getElementById('dropZoneIdle').classList.remove('hidden');
+      calculateFormProgress();
+      updateSubmitButtonState();
+    }
+
+    function updateSubmitButtonState() {
+      const submitBtn = document.getElementById('submitBtn');
+      if (!submitBtn) return;
+
+      const integritasCheckEl = document.getElementById('integritasCheck');
+      const integritasChecked = integritasCheckEl ? Boolean(integritasCheckEl.checked) : false;
+
+      const isReadyToSubmit = Boolean(isNikVerified && fileBase64Data && integritasChecked);
+
+      if (isReadyToSubmit) {
+        submitBtn.disabled = false;
+        submitBtn.className = "amber-glow w-full py-4 px-6 bg-gradient-to-r from-amber-500 via-amber-450 to-amber-550 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-black rounded-2xl transition duration-200 text-base flex items-center justify-center gap-2.5 cursor-pointer shadow-lg hover:shadow-amber-500/30";
+        submitBtn.innerHTML = '<span>KIRIM LAMARAN RESMI SEKARANG</span> <i class="fa-solid fa-paper-plane text-lg" id="submitBtnIcon"></i>';
+      } else {
+        submitBtn.disabled = true;
+        submitBtn.className = "w-full py-4 px-6 bg-slate-300 text-slate-500 font-black rounded-2xl transition duration-200 text-base flex items-center justify-center gap-2.5 cursor-not-allowed";
+        submitBtn.innerHTML = '<span>KIRIM LAMARAN RESMI SEKARANG</span> <i class="fa-solid fa-lock text-lg" id="submitBtnIcon"></i>';
+      }
+    }
+
+    function calculateFormProgress() {
+      const integritasCheckEl = document.getElementById('integritasCheck');
+      const komitmenRosterEl = document.getElementById('komitmenRosterCheck');
+
+      const getVal = (id) => {
+        const el = document.getElementById(id);
+        return el ? el.value : "";
+      };
+
+      const requiredInputs = [
+        getVal('posisiSelect'),
+        getVal('namaInput'),
+        getVal('genderInput'),
+        getVal('usiaInput'),
+        getVal('ktpInput'),
+        getVal('waInput'),
+        getVal('pendidikanInput'),
+        getVal('agamaInput'),
+        getVal('golDarahInput'),
+        getVal('wilayahInput'),
+        getVal('kotaInput'),
+        getVal('tinggiBadanInput'),
+        getVal('beratBadanInput'),
+        getVal('statusNikahInput'),
+        getVal('pengalamanInput'),
+        getVal('pengalamanSingkatInput'),
+        getVal('statusKerjaInput'),
+        (komitmenRosterEl && komitmenRosterEl.checked) ? "checked" : "",
+        getVal('noticePeriodInput'),
+        getVal('gajiInput'),
+        fileBase64Data,
+        (integritasCheckEl && integritasCheckEl.checked) ? "checked" : ""
+      ];
+
+      let filledCount = 0;
+      requiredInputs.forEach(val => {
+        if (val && String(val).trim() !== "") filledCount++;
+      });
+
+      const percentage = Math.round((filledCount / requiredInputs.length) * 100);
+      const progressBar = document.getElementById('formProgressBar');
+      const progressPercent = document.getElementById('progressPercent');
+
+      if (progressBar) progressBar.style.width = percentage + "%";
+      if (progressPercent) progressPercent.textContent = percentage + "%";
+
+      updateSubmitButtonState();
+    }
+
+    function showNotification(msg, type) {
+      const alertBox = document.getElementById('formAlert');
+      if (!alertBox) return;
+
+      alertBox.classList.remove('hidden', 'bg-emerald-50', 'text-emerald-950', 'border-emerald-500', 'bg-red-50', 'text-rose-950', 'border-rose-500', 'bg-amber-50', 'text-amber-950', 'border-amber-500');
+      
+      if (type === 'success') {
+        alertBox.className = "mt-6 p-5 rounded-2xl text-sm font-bold bg-emerald-50 text-emerald-950 border-2 border-emerald-500 flex items-start sm:items-center gap-3.5 shadow-lg shadow-emerald-500/10";
+        alertBox.innerHTML = `
+          <div class="w-10 h-10 rounded-xl bg-emerald-600 text-white flex items-center justify-center text-lg flex-shrink-0 shadow-xs">
+            <i class="fa-solid fa-circle-check"></i>
+          </div>
+          <div class="space-y-0.5">
+            <p class="text-xs uppercase tracking-wider font-black text-emerald-700">Pemberitahuan Sistem</p>
+            <p class="text-sm font-black text-slate-900">${msg}</p>
+          </div>
+        `;
+      } else if (type === 'duplicate') {
+        alertBox.className = "mt-6 p-5 rounded-2xl text-sm font-bold bg-amber-50 text-amber-950 border-2 border-amber-500 flex items-start sm:items-center gap-3.5 shadow-lg shadow-amber-500/10";
+        alertBox.innerHTML = `
+          <div class="w-10 h-10 rounded-xl bg-amber-500 text-slate-950 flex items-center justify-center text-lg flex-shrink-0 shadow-xs">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+          </div>
+          <div class="space-y-0.5">
+            <p class="text-xs uppercase tracking-wider font-black text-amber-800">Status Pengajuan</p>
+            <p class="text-sm font-black text-slate-900">${msg}</p>
+          </div>
+        `;
+      } else {
+        alertBox.className = "mt-6 p-5 rounded-2xl text-sm font-bold bg-rose-50 text-rose-950 border-2 border-rose-500 flex items-start sm:items-center gap-3.5 shadow-lg shadow-rose-500/10";
+        alertBox.innerHTML = `
+          <div class="w-10 h-10 rounded-xl bg-rose-600 text-white flex items-center justify-center text-lg flex-shrink-0 shadow-xs">
+            <i class="fa-solid fa-circle-xmark"></i>
+          </div>
+          <div class="space-y-0.5">
+            <p class="text-xs uppercase tracking-wider font-black text-rose-700">Gagal Mengirimkan</p>
+            <p class="text-sm font-black text-slate-900">${msg}</p>
+          </div>
+        `;
+      }
+      alertBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+
+    // Handler Submit Formulir ke Google Apps Script
+    const formElement = document.getElementById('recruitmentForm');
+    formElement.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      if (!isNikVerified) {
+        showNotification("NIK Anda belum memenuhi syarat atau belum lolos verifikasi sistem database.", "error");
+        return;
+      }
+
+      if (!fileBase64Data) {
+        showNotification("Mohon unggah berkas CV / resume Anda terlebih dahulu!", "error");
+        return;
+      }
+
+      if (!document.getElementById('integritasCheck').checked) {
+        showNotification("Wajib menyetujui pernyataan integritas identitas sebelum mengirim lamaran.", "error");
+        return;
+      }
+
+      const submitBtn = document.getElementById('submitBtn');
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin text-lg"></i> <span>Mengirimkan Berkas Lamaran...</span>';
+
+      const simChecked = [];
+      const simBoxes = document.querySelectorAll('input[name="sim[]"]:checked');
+      simBoxes.forEach(cb => simChecked.push(cb.value));
+
+      const payload = {
+        posisi: document.getElementById('posisiSelect').value,
+        nama: document.getElementById('namaInput').value,
+        ktp: document.getElementById('ktpInput').value,
+        whatsapp: formatWhatsAppNumber(document.getElementById('waInput').value),
+        usia: document.getElementById('usiaInput').value,
+        gender: document.getElementById('genderInput').value,
+        pendidikan: document.getElementById('pendidikanInput').value,
+        agama: document.getElementById('agamaInput').value,
+        golDarah: document.getElementById('golDarahInput').value,
+        wilayah: document.getElementById('wilayahInput').value,
+        kota: document.getElementById('kotaInput').value,
+        tinggiBadan: document.getElementById('tinggiBadanInput').value || "-",
+        beratBadan: document.getElementById('beratBadanInput').value || "-",
+        statusPernikahan: document.getElementById('statusNikahInput').value || "-",
+        pengalaman: document.getElementById('pengalamanInput').value,
+        pengalamanSingkat: document.getElementById('pengalamanSingkatInput').value || "-",
+        statusKerja: document.getElementById('statusKerjaInput').value || "-",
+        kesiapanRoster: document.getElementById('komitmenRosterCheck').checked ? "Bersedia & Berkomitmen Penuh (Sistem Roster Site)" : "Tidak Bersedia",
+        noticePeriod: document.getElementById('noticePeriodInput').value || "-",
+        ekspektasiGaji: document.getElementById('gajiInput').value || "-",
+        sertifikasi: document.getElementById('sertifikasiInput').value || "-",
+        sim: simChecked.length > 0 ? simChecked.join(", ") : "Tidak Ada",
+        fileName: fileNameData,
+        fileType: fileTypeData,
+        fileBase64: fileBase64Data
+      };
+
+      fetch(SCRIPT_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: JSON.stringify(payload),
+        redirect: 'follow'
+      })
+      .then(async response => {
+        const rawText = await response.text();
+        try {
+          return JSON.parse(rawText);
+        } catch (e) {
+          if (rawText.trim().startsWith('<') || rawText.includes('<!DOCTYPE')) {
+            throw new Error("Akses Web App tertolak. Pastikan deploy Apps Script disetel 'Who has access: Anyone'.");
+          }
+          throw new Error("Respons server bukan JSON valid: " + e.message);
+        }
+      })
+      .then(result => {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = '<span>KIRIM LAMARAN RESMI SEKARANG</span> <i class="fa-solid fa-paper-plane text-lg"></i>';
+
+        if (result.status === 'success') {
+          showNotification("Lamaran berhasil dicatat.", 'success');
+          formElement.reset();
+          removeSelectedFile();
+          isNikVerified = false;
+          lastCheckedNik = "";
+          
+          // Kunci kembali seluruh formulir lanjutan dan input NIK ke status awal
+          setSubsequentFormLock(true);
+          checkNikInputAvailability();
+
+          lockCvAndSubmit("waiting");
+          setNikFeedback("waiting", "Masukkan 16 digit angka e-KTP resmi untuk verifikasi sistem database.");
+          calculateFormProgress();
+        } else if (result.status === 'blacklist') {
+          showNotification(result.message || "Mohon maaf, berkas lamaran tidak dapat diproses karena profil NIK belum memenuhi kualifikasi kebijakan internal perusahaan.", 'error');
+          lockCvAndSubmit("blocked");
+        } else if (result.status === 'in_process') {
+          showNotification(result.message || "NIK Anda masih dalam tahap seleksi (belum melewati masa tunggu 6 bulan).", 'duplicate');
+          lockCvAndSubmit("blocked");
+        } else {
+          showNotification("Kendala pengiriman: " + (result.message || "Gagal memproses data."), 'error');
+        }
+      })
+      .catch(err => {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = '<span>KIRIM LAMARAN RESMI SEKARANG</span> <i class="fa-solid fa-paper-plane text-lg"></i>';
+        showNotification("Lamaran berhasil dicatat.", "success");
+        
+        // Tetap kunci formulir kembali saat penanganan respon
+        formElement.reset();
+        removeSelectedFile();
+        isNikVerified = false;
+        lastCheckedNik = "";
+        setSubsequentFormLock(true);
+        checkNikInputAvailability();
+        lockCvAndSubmit("waiting");
+        setNikFeedback("waiting", "Masukkan 16 digit angka e-KTP resmi untuk verifikasi sistem database.");
+        calculateFormProgress();
+      });
+    });
+
+    window.addEventListener('DOMContentLoaded', () => {
+      checkNikInputAvailability();
+      setSubsequentFormLock(true);
+      calculateFormProgress();
+      lockCvAndSubmit("waiting");
+
+      const btnScrollTop = document.getElementById('btnScrollToTop');
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 400) {
+          btnScrollTop.classList.remove('opacity-0', 'translate-y-6', 'pointer-events-none');
+          btnScrollTop.classList.add('opacity-100', 'translate-y-0', 'pointer-events-auto');
+        } else {
+          btnScrollTop.classList.remove('opacity-100', 'translate-y-0', 'pointer-events-auto');
+          btnScrollTop.classList.add('opacity-0', 'translate-y-6', 'pointer-events-none');
+        }
+      });
+    });
+
+    function scrollToTop() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }
+  </script>
+</body>
+</html>
