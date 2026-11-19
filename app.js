@@ -27,8 +27,21 @@ const VALID_PROVINCES = [
   "91", "92", "93", "94", "95", "96"                          // Papua
 ];
 
-// Dataset Persyaratan Kualifikasi Lengkap (27 Posisi)
+// Dataset Persyaratan Kualifikasi Lengkap (Aktif: Chief Mechanic + Arsip 27 Posisi)
 const jobQualifications = {
+  'cm-1': {
+    title: "Chief Mechanic",
+    category: "Plant & Workshop Leadership",
+    selectValue: "Chief Mechanic",
+    requirements: [
+      "Jenis Kelamin: Khusus Laki-laki.",
+      "Pendidikan minimal SMK, diutamakan D3 ke atas jurusan Teknik Mesin / Otomotif.",
+      "Usia maksimal 50 tahun.",
+      "Minimal pengalaman 3–5 tahun sebagai Chief Mechanic / Plant Supervisor (diutamakan di industri pertambangan).",
+      "Memimpin & mengawasi seluruh operasional perawatan, perbaikan, dan kesiapan armada alat berat (PA/MA) di Workshop & Site.",
+      "Kepemilikan sertifikat (POP / POM / BMC) menjadi nilai tambah; diutamakan melampirkan surat pengalaman kerja (Paklaring)."
+    ]
+  },
   'op-1': {
     title: "Operator Drilling Machine (DM45)",
     category: "Operator Alat Berat",
