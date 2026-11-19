@@ -3,15 +3,16 @@
  * RMS v3.0 (RECRUITMENT MANAGEMENT SYSTEM) — E-RECRUITMENT PORTAL MODULE
  * Ecosystem : AP Systems (Adi Pranata Systems)
  * Author    : Adi Pranata
- * Version   : 3.1.0
+ * Version   : 3.2.0
  * ============================================================================
  * Modul ini menangani:
  * 1. Katalog & rincian kualifikasi posisi aktif (Chief Mechanic) serta arsip 27 posisi.
  * 2. Pengawasan batas waktu terakhir pendaftaran (05 Desember 2026).
- * 3. Algoritma validasi struktur 16 digit NIK (Lapis 1 - Client-Side).
- * 4. Verifikasi database real-time & penguncian formulir bertahap (Gate Lock).
- * 5. Manajemen unggah berkas dokumen PDF/DOCX (Drag & Drop, Maks. 10 MB).
- * 6. Pengiriman data terstruktur ke backend Google Apps Script.
+ * 3. Penyesuaian otomatis catatan tahapan seleksi (Level Pimpinan vs Kru/Admin).
+ * 4. Algoritma validasi struktur 16 digit NIK (Lapis 1 - Client-Side).
+ * 5. Verifikasi database real-time & penguncian formulir bertahap (Gate Lock).
+ * 6. Manajemen unggah berkas dokumen PDF/DOCX (Drag & Drop, Maks. 10 MB).
+ * 7. Pengiriman data terstruktur ke backend Google Apps Script.
  */
 
 const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyt2wxM1hylQ-WFBXXjn2Mqk8iVbG0zspK6Vb4VSzRJ7DnmQ7vC97CH6WI4qI0rzksjqw/exec";
@@ -478,6 +479,22 @@ function openDetailModal(jobId) {
     li.textContent = req;
     listEl.appendChild(li);
   });
+
+  // Penyesuaian otomatis catatan tahapan seleksi (Level Pimpinan vs Kru/Admin)
+  const notesEl = document.getElementById('modalSelectionNotes');
+  if (notesEl) {
+    if (jobId === 'cm-1') {
+      notesEl.innerHTML = `
+        <p><i class="fa-solid fa-circle-dot text-[9px] text-amber-600 mr-1.5"></i><strong>Tahapan Seleksi Level Pimpinan:</strong> Kandidat yang lolos seleksi administrasi akan mengikuti tahap <strong>Wawancara Teknis, Manajemen Workshop (PA/MA &amp; Backlog), serta Kepemimpinan</strong> bersama Plant Manager / Manajemen PT KTC Coal Mining &amp; Energy.</p>
+        <p><i class="fa-solid fa-circle-dot text-[9px] text-amber-600 mr-1.5"></i><strong>Verifikasi Rekam Jejak:</strong> Wajib melampirkan surat pengalaman kerja (<em>Paklaring</em>) yang relevan dan bersedia mengikuti verifikasi referensi (<em>reference check</em>) serta pemeriksaan kesehatan (MCU) Site.</p>
+      `;
+    } else {
+      notesEl.innerHTML = `
+        <p><i class="fa-solid fa-circle-dot text-[9px] text-amber-600 mr-1.5"></i><strong>Khusus Operator &amp; Driver:</strong> Wajib memiliki SIM B2 biasa atau SIM B2 Umum yang masih aktif (SIO bersifat opsional / nilai tambah). Bersedia mengikuti tahapan tes tertulis dan tes praktek lapangan di site.</p>
+        <p><i class="fa-solid fa-circle-dot text-[9px] text-amber-600 mr-1.5"></i><strong>Khusus Admin &amp; Storeman:</strong> Bersedia mengikuti tahapan tes tertulis dan interview online via Zoom Meeting.</p>
+      `;
+    }
+  }
 
   const applyBtn = document.getElementById('modalApplyBtn');
   applyBtn.onclick = function() {
