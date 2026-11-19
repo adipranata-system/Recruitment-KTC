@@ -3,11 +3,11 @@
  * RMS v3.0 (RECRUITMENT MANAGEMENT SYSTEM) — E-RECRUITMENT PORTAL MODULE
  * Ecosystem : AP Systems (Adi Pranata Systems)
  * Author    : Adi Pranata
- * Version   : 3.0.0
+ * Version   : 3.1.0
  * ============================================================================
  * Modul ini menangani:
- * 1. Katalog & rincian kualifikasi 27 posisi operasional, mekanik, dan support.
- * 2. Sistem pencarian real-time & penyaringan kategori lowongan.
+ * 1. Katalog & rincian kualifikasi posisi aktif (Chief Mechanic) serta arsip 27 posisi.
+ * 2. Pengawasan batas waktu terakhir pendaftaran (05 Desember 2026).
  * 3. Algoritma validasi struktur 16 digit NIK (Lapis 1 - Client-Side).
  * 4. Verifikasi database real-time & penguncian formulir bertahap (Gate Lock).
  * 5. Manajemen unggah berkas dokumen PDF/DOCX (Drag & Drop, Maks. 10 MB).
@@ -15,6 +15,14 @@
  */
 
 const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyt2wxM1hylQ-WFBXXjn2Mqk8iVbG0zspK6Vb4VSzRJ7DnmQ7vC97CH6WI4qI0rzksjqw/exec";
+
+// Pengaturan Batas Waktu Terakhir Pendaftaran (05 Desember 2026 Pukul 23:59:59)
+const APPLICATION_DEADLINE_TEXT = "05 Desember 2026";
+const APPLICATION_DEADLINE_DATE = new Date(2026, 11, 5, 23, 59, 59); // Bulan 11 = Desember (0-indexed)
+
+function isDeadlinePassed() {
+  return new Date() > APPLICATION_DEADLINE_DATE;
+}
 
 // Daftar 38 Kode Resmi Provinsi di Indonesia (Kemendagri)
 const VALID_PROVINCES = [
@@ -34,6 +42,7 @@ const jobQualifications = {
     category: "Plant & Workshop Leadership",
     selectValue: "Chief Mechanic",
     requirements: [
+      "Batas waktu terakhir pendaftaran & pengiriman berkas: 05 Desember 2026.",
       "Jenis Kelamin: Khusus Laki-laki.",
       "Pendidikan minimal SMK, diutamakan D3 ke atas jurusan Teknik Mesin / Otomotif.",
       "Usia maksimal 50 tahun.",
@@ -628,6 +637,21 @@ function checkNikInputAvailability() {
   const statusIcon = document.getElementById('nikStatusIcon');
   const feedbackEl = document.getElementById('nikFeedback');
 
+  if (isDeadlinePassed()) {
+    ktpInput.disabled = true;
+    ktpInput.classList.add('cursor-not-allowed', 'opacity-75', 'bg-slate-100');
+    ktpInput.classList.remove('bg-white');
+    ktpInput.placeholder = "Pendaftaran Ditutup";
+    if (nikBadge) {
+      nikBadge.className = "text-[10px] font-extrabold text-rose-700 bg-rose-50 px-2 py-0.5 rounded border border-rose-200";
+      nikBadge.innerHTML = '<i class="fa-solid fa-lock text-[9px] mr-1"></i>Ditutup';
+    }
+    statusIcon.innerHTML = '<i class="fa-solid fa-lock text-rose-500"></i>';
+    feedbackEl.className = "text-[11px] font-bold text-rose-700 pt-1";
+    feedbackEl.innerHTML = '<i class="fa-solid fa-circle-exclamation mr-1"></i>Masa pendaftaran telah berakhir pada batas waktu terakhir (' + APPLICATION_DEADLINE_TEXT + ').';
+    return false;
+  }
+
   const isPrerequisiteMet = Boolean(genderVal && usiaVal && parseInt(usiaVal, 10) >= 18);
 
   if (!isPrerequisiteMet) {
@@ -1090,7 +1114,7 @@ function updateSubmitButtonState() {
   const integritasCheckEl = document.getElementById('integritasCheck');
   const integritasChecked = integritasCheckEl ? Boolean(integritasCheckEl.checked) : false;
 
-  const isReadyToSubmit = Boolean(isNikVerified && fileBase64Data && integritasChecked);
+  const isReadyToSubmit = Boolean(!isDeadlinePassed() && isNikVerified && fileBase64Data && integritasChecked);
 
   if (isReadyToSubmit) {
     submitBtn.disabled = false;
@@ -1200,6 +1224,11 @@ const formElement = document.getElementById('recruitmentForm');
 if (formElement) {
   formElement.addEventListener('submit', function(e) {
     e.preventDefault();
+
+    if (isDeadlinePassed()) {
+      showNotification("Masa pendaftaran telah ditutup karena melewati batas waktu terakhir (" + APPLICATION_DEADLINE_TEXT + ").", "error");
+      return;
+    }
 
     if (!isNikVerified) {
       showNotification("NIK Anda belum memenuhi syarat atau belum lolos verifikasi sistem database.", "error");
@@ -1318,6 +1347,14 @@ if (formElement) {
 
 // ================= INISIALISASI HALAMAN & NAVIGASI GULIR =================
 window.addEventListener('DOMContentLoaded', () => {
+  if (isDeadlinePassed()) {
+    const statusBadge = document.getElementById('chiefStatusBadge');
+    if (statusBadge) {
+      statusBadge.className = "text-[11px] font-extrabold px-3 py-1 rounded-lg bg-rose-100 text-rose-700 border border-rose-300";
+      statusBadge.innerHTML = '<i class="fa-solid fa-circle-xmark mr-1"></i>Ditutup';
+    }
+  }
+
   checkNikInputAvailability();
   setSubsequentFormLock(true);
   calculateFormProgress();
