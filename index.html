@@ -151,7 +151,7 @@
       <span class="inline-flex items-center gap-1.5 bg-black/15 px-2.5 py-0.5 rounded-full text-xs font-black">
         <i class="fa-solid fa-shield-halved"></i> BEBAS BIAYA (100% GRATIS)
       </span>
-      <span>Proses seleksi PT KTC tidak pernah memungut biaya apa pun &bull; Penempatan Kerja: <strong>Muara Teweh, Barito Utara, Kalimantan Tengah</strong>.</span>
+      <span>Proses seleksi PT KTC tidak pernah memungut biaya apa pun &bull; Penempatan Kerja: <strong>Muara Teweh, Barito Utara, Kalimantan Tengah</strong> &bull; Batas Akhir: <strong>05 Desember 2026</strong>.</span>
     </div>
   </div>
 
@@ -181,8 +181,8 @@
           <div class="text-[11px] text-slate-300 font-semibold mt-0.5">Kualifikasi Utama</div>
         </div>
         <div class="bg-coal-900/90 backdrop-blur border border-slate-700/80 p-4 rounded-2xl text-center shadow-lg">
-          <div class="text-amber-400 text-2xl sm:text-3xl font-black"><i class="fa-solid fa-location-dot"></i></div>
-          <div class="text-[11px] text-slate-300 font-semibold mt-0.5">Muara Teweh</div>
+          <div class="text-amber-400 text-sm sm:text-base font-black leading-tight pt-1">05 Des 2026</div>
+          <div class="text-[11px] text-slate-300 font-semibold mt-0.5">Batas Waktu</div>
         </div>
       </div>
     </div>
@@ -279,9 +279,16 @@
         <!-- ================= POSISI AKTIF: CHIEF MECHANIC ================= -->
         <article class="job-card md:col-span-2 bg-white rounded-2xl border-2 border-amber-400/90 p-6 shadow-md hover:shadow-lg transition flex flex-col justify-between" data-category="mechanic" data-title="Chief Mechanic Plant Supervisor Workshop" data-id="cm-1">
           <div>
-            <div class="flex items-center justify-between gap-2 mb-2.5">
+            <div class="flex flex-wrap items-center justify-between gap-2 mb-2.5">
               <span class="text-[11px] font-bold px-3 py-1 rounded-lg bg-amber-50 text-amber-800 border border-amber-200">Plant & Workshop Leadership</span>
-              <span class="text-[11px] font-extrabold px-3 py-1 rounded-lg bg-emerald-50 text-emerald-700 border border-emerald-200"><i class="fa-solid fa-circle-check mr-1"></i>Tersedia</span>
+              <div class="flex flex-wrap items-center gap-2">
+                <span class="text-[11px] font-bold px-3 py-1 rounded-lg bg-rose-50 text-rose-700 border border-rose-200">
+                  <i class="fa-regular fa-clock mr-1"></i>Batas Akhir: 05 Desember 2026
+                </span>
+                <span id="chiefStatusBadge" class="text-[11px] font-extrabold px-3 py-1 rounded-lg bg-emerald-50 text-emerald-700 border border-emerald-200">
+                  <i class="fa-solid fa-circle-check mr-1"></i>Tersedia
+                </span>
+              </div>
             </div>
             <h3 class="text-xl sm:text-2xl font-black text-slate-900">Chief Mechanic</h3>
             <p class="text-xs sm:text-sm text-slate-600 mt-2 leading-relaxed">
@@ -851,8 +858,13 @@
     <section id="formLamar" class="scroll-mt-24 bg-white rounded-3xl border border-slate-200 shadow-xl overflow-hidden mt-12">
       <div class="bg-gradient-to-r from-coal-950 via-coal-900 to-coal-950 p-6 sm:p-8 text-white relative">
         <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-2">
-          <div class="inline-flex items-center gap-2 text-xs font-black px-3.5 py-1 rounded-full bg-amber-500 text-slate-950 uppercase tracking-wider">
-            <i class="fa-solid fa-bolt"></i> Formulir Rekrutmen Online
+          <div class="flex flex-wrap items-center gap-2">
+            <div class="inline-flex items-center gap-2 text-xs font-black px-3.5 py-1 rounded-full bg-amber-500 text-slate-950 uppercase tracking-wider">
+              <i class="fa-solid fa-bolt"></i> Formulir Rekrutmen Online
+            </div>
+            <div class="inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1 rounded-full bg-rose-500/20 text-rose-300 border border-rose-500/40">
+              <i class="fa-regular fa-calendar-check"></i> Batas Waktu Terakhir: 05 Desember 2026
+            </div>
           </div>
           <!-- Progress Bar Label -->
           <div class="text-xs text-slate-300 font-bold flex items-center gap-2">
@@ -863,7 +875,7 @@
         
         <h2 class="text-2xl sm:text-3xl font-black text-white">Formulir Pendaftaran Mining Operation, Plant & Support</h2>
         <p class="text-slate-300 text-xs sm:text-sm mt-1 max-w-2xl">
-          Lengkapi data identitas, kualifikasi teknis, serta lampirkan berkas Curriculum Vitae (CV) Anda untuk seleksi administrasi.
+          Lengkapi data identitas, kualifikasi teknis, serta lampirkan berkas Curriculum Vitae (CV) Anda untuk seleksi administrasi sebelum batas waktu berakhir.
         </p>
 
         <!-- Dynamic Form Progress Bar -->
@@ -886,7 +898,7 @@
                   POSISI YANG DILAMAR <span class="text-red-500">*</span>
                 </label>
                 <p class="text-[11px] text-slate-500 font-medium">
-                  Posisi penugasan yang sedang dibuka saat ini.
+                  Posisi penugasan yang sedang dibuka saat ini (Batas Akhir: 05 Desember 2026).
                 </p>
               </div>
             </div>
@@ -1449,6 +1461,6 @@
   </button>
 
   <!-- Logika Aplikasi Eksternal (RMS v3.0 • AP Systems) -->
-  <script src="app.js?v=3.0"></script>
+  <script src="app.js?v=3.1"></script>
 </body>
 </html>
