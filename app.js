@@ -3,12 +3,12 @@
  * RMS v3.0 (RECRUITMENT MANAGEMENT SYSTEM) — E-RECRUITMENT PORTAL MODULE
  * Ecosystem : AP Systems (Adi Pranata Systems)
  * Author    : Adi Pranata
- * Version   : 3.2.0
+ * Version   : 3.3.0
  * ============================================================================
  * Modul ini menangani:
- * 1. Katalog & rincian kualifikasi posisi aktif (Chief Mechanic) serta arsip 27 posisi.
+ * 1. Katalog & rincian kualifikasi posisi aktif (Chief Mechanic & Trainer Operator) serta arsip 27 posisi.
  * 2. Pengawasan batas waktu terakhir pendaftaran (05 Desember 2026).
- * 3. Penyesuaian otomatis catatan tahapan seleksi (Level Pimpinan vs Kru/Admin).
+ * 3. Penyesuaian otomatis catatan tahapan seleksi (Level Pimpinan, Trainer, vs Kru/Admin).
  * 4. Algoritma validasi struktur 16 digit NIK (Lapis 1 - Client-Side).
  * 5. Verifikasi database real-time & penguncian formulir bertahap (Gate Lock).
  * 6. Manajemen unggah berkas dokumen PDF/DOCX (Drag & Drop, Maks. 10 MB).
@@ -21,22 +21,7 @@ const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyt2wxM1hylQ-WFBXXjn
 const APPLICATION_DEADLINE_TEXT = "05 Desember 2026";
 const APPLICATION_DEADLINE_DATE = new Date(2026, 11, 5, 23, 59, 59); // Bulan 11 = Desember (0-indexed)
 
-function isDeadlinePassed() {
-  return new Date() > APPLICATION_DEADLINE_DATE;
-}
-
-// Daftar 38 Kode Resmi Provinsi di Indonesia (Kemendagri)
-const VALID_PROVINCES = [
-  "11", "12", "13", "14", "15", "16", "17", "18", "19", "21", // Sumatera
-  "31", "32", "33", "34", "35", "36",                         // Jawa
-  "51", "52", "53",                                           // Bali & Nusa Tenggara
-  "61", "62", "63", "64", "65",                               // Kalimantan (62 = Kalteng)
-  "71", "72", "73", "74", "75", "76",                         // Sulawesi
-  "81", "82",                                                 // Maluku
-  "91", "92", "93", "94", "95", "96"                          // Papua
-];
-
-// Dataset Persyaratan Kualifikasi Lengkap (Aktif: Chief Mechanic + Arsip 27 Posisi)
+// Dataset Persyaratan Kualifikasi Lengkap (Aktif: Chief Mechanic & Trainer Operator + Arsip 27 Posisi)
 const jobQualifications = {
   'cm-1': {
     title: "Chief Mechanic",
@@ -50,6 +35,21 @@ const jobQualifications = {
       "Minimal pengalaman 3–5 tahun sebagai Chief Mechanic / Plant Supervisor (diutamakan di industri pertambangan).",
       "Memimpin & mengawasi seluruh operasional perawatan, perbaikan, dan kesiapan armada alat berat (PA/MA) di Workshop & Site.",
       "Kepemilikan sertifikat (POP / POM / BMC) menjadi nilai tambah; diutamakan melampirkan surat pengalaman kerja (Paklaring)."
+    ]
+  },
+  'tr-1': {
+    title: "Trainer Operator",
+    category: "Training & Operation Development",
+    selectValue: "Trainer Operator",
+    requirements: [
+      "Batas waktu terakhir pendaftaran & pengiriman berkas: 05 Desember 2026.",
+      "Jenis Kelamin: Khusus Laki-laki.",
+      "Pendidikan minimal SMK, diutamakan D3 ke atas.",
+      "Minimal pengalaman 3–5 tahun sebagai Trainer / Instruktur Operator Alat Berat di industri pertambangan.",
+      "Menguasai pengoperasian mayoritas unit alat berat pertambangan (Excavator, Bulldozer, ADT, Motor Grader, Wheel Loader, Compactor, & Dump Truck).",
+      "Wajib memiliki SIM BII Umum (SIM B2 Umum) yang masih aktif.",
+      "Diutamakan memiliki sertifikat pendukung (TOT / POP / SIO) serta melampirkan surat pengalaman kerja (Paklaring).",
+      "Lingkup pekerjaan: melaksanakan seleksi operator tambang (uji teori & praktik), pengajaran/pembinaan operator (coaching & mentoring), pengembangan modul pelatihan & SOP pengoperasian alat berat, serta evaluasi kompetensi operator."
     ]
   },
   'op-1': {
@@ -475,18 +475,18 @@ function openDetailModal(jobId) {
   const listEl = document.getElementById('modalRequirementsList');
   listEl.innerHTML = "";
   job.requirements.forEach(req => {
-    const li = document.createElement('li');
-    li.textContent = req;
-    listEl.appendChild(li);
-  });
-
-  // Penyesuaian otomatis catatan tahapan seleksi (Level Pimpinan vs Kru/Admin)
+  // Penyesuaian otomatis catatan tahapan seleksi (Level Pimpinan, Trainer, vs Kru/Admin)
   const notesEl = document.getElementById('modalSelectionNotes');
   if (notesEl) {
     if (jobId === 'cm-1') {
       notesEl.innerHTML = `
         <p><i class="fa-solid fa-circle-dot text-[9px] text-amber-600 mr-1.5"></i><strong>Tahapan Seleksi Level Pimpinan:</strong> Kandidat yang lolos seleksi administrasi akan mengikuti tahap <strong>Wawancara Teknis, Manajemen Workshop (PA/MA &amp; Backlog), serta Kepemimpinan</strong> bersama Plant Manager / Manajemen PT KTC Coal Mining &amp; Energy.</p>
         <p><i class="fa-solid fa-circle-dot text-[9px] text-amber-600 mr-1.5"></i><strong>Verifikasi Rekam Jejak:</strong> Wajib melampirkan surat pengalaman kerja (<em>Paklaring</em>) yang relevan dan bersedia mengikuti verifikasi referensi (<em>reference check</em>) serta pemeriksaan kesehatan (MCU) Site.</p>
+      `;
+    } else if (jobId === 'tr-1') {
+      notesEl.innerHTML = `
+        <p><i class="fa-solid fa-circle-dot text-[9px] text-amber-600 mr-1.5"></i><strong>Tahapan Seleksi Trainer Operator:</strong> Kandidat yang lolos seleksi administrasi akan mengikuti tahap <strong>Wawancara Teknis, Simulasi Mengajar (<em>Micro-teaching</em> / Materi P2H &amp; Safety Operation), serta Uji Praktik Multi-Unit Alat Berat</strong> di Site.</p>
+        <p><i class="fa-solid fa-circle-dot text-[9px] text-amber-600 mr-1.5"></i><strong>Verifikasi Lisensi &amp; Rekam Jejak:</strong> Wajib memiliki <strong>SIM BII Umum</strong> aktif, melampirkan surat pengalaman kerja (<em>Paklaring</em>) / sertifikat pendukung, serta lolos pemeriksaan kesehatan (MCU) Site.</p>
       `;
     } else {
       notesEl.innerHTML = `
@@ -1365,11 +1365,13 @@ if (formElement) {
 // ================= INISIALISASI HALAMAN & NAVIGASI GULIR =================
 window.addEventListener('DOMContentLoaded', () => {
   if (isDeadlinePassed()) {
-    const statusBadge = document.getElementById('chiefStatusBadge');
-    if (statusBadge) {
-      statusBadge.className = "text-[11px] font-extrabold px-3 py-1 rounded-lg bg-rose-100 text-rose-700 border border-rose-300";
-      statusBadge.innerHTML = '<i class="fa-solid fa-circle-xmark mr-1"></i>Ditutup';
-    }
+    ['chiefStatusBadge', 'trainerStatusBadge'].forEach(badgeId => {
+      const statusBadge = document.getElementById(badgeId);
+      if (statusBadge) {
+        statusBadge.className = "text-[11px] font-extrabold px-3 py-1 rounded-lg bg-rose-100 text-rose-700 border border-rose-300";
+        statusBadge.innerHTML = '<i class="fa-solid fa-circle-xmark mr-1"></i>Ditutup';
+      }
+    });
   }
 
   checkNikInputAvailability();
