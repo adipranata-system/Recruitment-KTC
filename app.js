@@ -21,6 +21,21 @@ const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyt2wxM1hylQ-WFBXXjn
 const APPLICATION_DEADLINE_TEXT = "05 Desember 2026";
 const APPLICATION_DEADLINE_DATE = new Date(2026, 11, 5, 23, 59, 59); // Bulan 11 = Desember (0-indexed)
 
+function isDeadlinePassed() {
+  return new Date() > APPLICATION_DEADLINE_DATE;
+}
+
+// Daftar 38 Kode Resmi Provinsi di Indonesia (Kemendagri)
+const VALID_PROVINCES = [
+  "11", "12", "13", "14", "15", "16", "17", "18", "19", "21", // Sumatera
+  "31", "32", "33", "34", "35", "36",                         // Jawa
+  "51", "52", "53",                                           // Bali & Nusa Tenggara
+  "61", "62", "63", "64", "65",                               // Kalimantan (62 = Kalteng)
+  "71", "72", "73", "74", "75", "76",                         // Sulawesi
+  "81", "82",                                                 // Maluku
+  "91", "92", "93", "94", "95", "96"                          // Papua
+];
+
 // Dataset Persyaratan Kualifikasi Lengkap (Aktif: Chief Mechanic & Trainer Operator + Arsip 27 Posisi)
 const jobQualifications = {
   'cm-1': {
@@ -475,6 +490,11 @@ function openDetailModal(jobId) {
   const listEl = document.getElementById('modalRequirementsList');
   listEl.innerHTML = "";
   job.requirements.forEach(req => {
+    const li = document.createElement('li');
+    li.textContent = req;
+    listEl.appendChild(li);
+  });
+
   // Penyesuaian otomatis catatan tahapan seleksi (Level Pimpinan, Trainer, vs Kru/Admin)
   const notesEl = document.getElementById('modalSelectionNotes');
   if (notesEl) {
