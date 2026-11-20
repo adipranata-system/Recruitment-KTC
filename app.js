@@ -3,12 +3,13 @@
  * RMS v3.0 (RECRUITMENT MANAGEMENT SYSTEM) — E-RECRUITMENT PORTAL MODULE
  * Ecosystem : AP Systems (Adi Pranata Systems)
  * Author    : Adi Pranata
- * Version   : 3.3.0
+ * Version   : 3.5.0
  * ============================================================================
  * Modul ini menangani:
- * 1. Katalog & rincian kualifikasi posisi aktif (Chief Mechanic & Trainer Operator) serta arsip 27 posisi.
+ * 1. Katalog & rincian kualifikasi 4 posisi aktif (Chief Mechanic, Trainer Operator,
+ *    Electrician, & Maintenance Servicing Mechanic Autolube/Fire Suppression) + arsip.
  * 2. Pengawasan batas waktu terakhir pendaftaran (05 Desember 2026).
- * 3. Penyesuaian otomatis catatan tahapan seleksi (Level Pimpinan, Trainer, vs Kru/Admin).
+ * 3. Penyesuaian otomatis catatan tahapan seleksi (Leadership, Trainer, Mechanic Crew).
  * 4. Algoritma validasi struktur 16 digit NIK (Lapis 1 - Client-Side).
  * 5. Verifikasi database real-time & penguncian formulir bertahap (Gate Lock).
  * 6. Manajemen unggah berkas dokumen PDF/DOCX (Drag & Drop, Maks. 10 MB).
@@ -36,7 +37,7 @@ const VALID_PROVINCES = [
   "91", "92", "93", "94", "95", "96"                          // Papua
 ];
 
-// Dataset Persyaratan Kualifikasi Lengkap (Aktif: Chief Mechanic & Trainer Operator + Arsip 27 Posisi)
+// Dataset Persyaratan Kualifikasi Lengkap (4 Posisi Aktif + Arsip 25 Posisi)
 const jobQualifications = {
   'cm-1': {
     title: "Chief Mechanic",
@@ -65,6 +66,33 @@ const jobQualifications = {
       "Wajib memiliki SIM BII Umum (SIM B2 Umum) yang masih aktif.",
       "Diutamakan memiliki sertifikat pendukung (TOT / POP / SIO) serta melampirkan surat pengalaman kerja (Paklaring).",
       "Lingkup pekerjaan: melaksanakan seleksi operator tambang (uji teori & praktik), pengajaran/pembinaan operator (coaching & mentoring), pengembangan modul pelatihan & SOP pengoperasian alat berat, serta evaluasi kompetensi operator."
+    ]
+  },
+  'mc-4': {
+    title: "Electrician (Auto Electrician)",
+    category: "Mechanic Crew",
+    selectValue: "Electrician",
+    requirements: [
+      "Batas waktu terakhir pendaftaran & pengiriman berkas: 05 Desember 2026.",
+      "Jenis Kelamin: Khusus Laki-laki.",
+      "Pendidikan min. SMK Ketenagalistrikan / Otomotif Elektronika.",
+      "Pengalaman min. 2 tahun sebagai Auto Electrician alat berat / DT tambang.",
+      "Mahir membaca diagram skematik perkabelan (wiring diagram).",
+      "Paham sistem starting, alternator, sensor-sensor, & ECM."
+    ]
+  },
+  'mc-8': {
+    title: "Maintenance Servicing Mechanic (Spesialisasi Autolube & Fire Suppression)",
+    category: "Mechanic Crew",
+    selectValue: "Maintenance Servicing Mechanic (Spesialisasi Autolube & Fire Suppression)",
+    requirements: [
+      "Batas waktu terakhir pendaftaran & pengiriman berkas: 05 Desember 2026.",
+      "Jenis Kelamin: Khusus Laki-laki.",
+      "Pendidikan min. SMA / SMK Sederajat.",
+      "Berpengalaman menangani perbaikan sistem Autolube dan Fire Suppression (semua merk).",
+      "Diutamakan bersertifikat atau memiliki surat pengalaman kerja di bidang Autolube dan Fire Suppression.",
+      "Lingkup kerja utama: perbaikan sistem Autolube dan Fire Suppression unit alat berat/DT, serta membantu pengerjaan Preventive Maintenance (PM) Service.",
+      "Kepemilikan SIM bersifat opsional (menjadi nilai tambah)."
     ]
   },
   'op-1': {
@@ -276,18 +304,6 @@ const jobQualifications = {
       "Familiar dengan general overhaul mesin diesel multi-silinder."
     ]
   },
-  'mc-4': {
-    title: "Electrician (Auto Electrician)",
-    category: "Mechanic Crew",
-    selectValue: "Electrician",
-    requirements: [
-      "Jenis Kelamin: Khusus Laki-laki.",
-      "Pendidikan min. SMK Ketenagalistrikan / Otomotif Elektronika.",
-      "Pengalaman min. 2 tahun sebagai Auto Electrician alat berat / DT tambang.",
-      "Mahir membaca diagram skematik perkabelan (wiring diagram).",
-      "Paham sistem starting, alternator, sensor-sensor, & ECM."
-    ]
-  },
   'mc-5': {
     title: "Fabrikasi (Welder)",
     category: "Mechanic Crew",
@@ -321,19 +337,6 @@ const jobQualifications = {
       "Pengalaman min. 1-2 tahun preventive maintenance alat berat/DT.",
       "Diutamakan memiliki SIM B2 Umum aktif (operasi Lube Truck).",
       "Memahami jadwal Periodic Service (PS 250, 500, 1000, 2000 HM) & sampling oli."
-    ]
-  },
-  'mc-8': {
-    title: "Maintenance Servicing Mechanic (Spesialisasi Autolube & Fire Suppression)",
-    category: "Mechanic Crew",
-    selectValue: "Maintenance Servicing Mechanic (Spesialisasi Autolube & Fire Suppression)",
-    requirements: [
-      "Jenis Kelamin: Khusus Laki-laki.",
-      "Pendidikan min. SMA / SMK Sederajat.",
-      "Berpengalaman menangani perbaikan sistem Autolube dan Fire Suppression (semua merk).",
-      "Diutamakan bersertifikat atau memiliki surat pengalaman kerja di bidang Autolube dan Fire Suppression.",
-      "Lingkup kerja utama: perbaikan sistem Autolube dan Fire Suppression unit alat berat/DT, serta membantu pengerjaan Preventive Maintenance (PM) Service.",
-      "Kepemilikan SIM bersifat opsional (menjadi nilai tambah)."
     ]
   },
   'sp-1': {
@@ -495,7 +498,7 @@ function openDetailModal(jobId) {
     listEl.appendChild(li);
   });
 
-  // Penyesuaian otomatis catatan tahapan seleksi (Level Pimpinan, Trainer, vs Kru/Admin)
+  // Penyesuaian otomatis catatan tahapan seleksi (Leadership, Trainer, Mechanic Crew, vs Operator/Admin)
   const notesEl = document.getElementById('modalSelectionNotes');
   if (notesEl) {
     if (jobId === 'cm-1') {
@@ -507,6 +510,11 @@ function openDetailModal(jobId) {
       notesEl.innerHTML = `
         <p><i class="fa-solid fa-circle-dot text-[9px] text-amber-600 mr-1.5"></i><strong>Tahapan Seleksi Trainer Operator:</strong> Kandidat yang lolos seleksi administrasi akan mengikuti tahap <strong>Wawancara Teknis, Simulasi Mengajar (<em>Micro-teaching</em> / Materi P2H &amp; Safety Operation), serta Uji Praktik Multi-Unit Alat Berat</strong> di Site.</p>
         <p><i class="fa-solid fa-circle-dot text-[9px] text-amber-600 mr-1.5"></i><strong>Verifikasi Lisensi &amp; Rekam Jejak:</strong> Wajib memiliki <strong>SIM BII Umum</strong> aktif, melampirkan surat pengalaman kerja (<em>Paklaring</em>) / sertifikat pendukung, serta lolos pemeriksaan kesehatan (MCU) Site.</p>
+      `;
+    } else if (jobId.startsWith('mc-')) {
+      notesEl.innerHTML = `
+        <p><i class="fa-solid fa-circle-dot text-[9px] text-amber-600 mr-1.5"></i><strong>Tahapan Seleksi Mechanic Crew:</strong> Kandidat yang lolos seleksi administrasi akan mengikuti tahap <strong>Tes Tertulis Teknis (Troubleshooting &amp; Pembacaan Skematik/Manual), Wawancara Teknis Plant, serta Uji Praktik Lapangan</strong> sesuai spesialisasi.</p>
+        <p><i class="fa-solid fa-circle-dot text-[9px] text-amber-600 mr-1.5"></i><strong>Verifikasi Pengalaman &amp; Sertifikasi:</strong> Diutamakan melampirkan surat pengalaman kerja (<em>Paklaring</em>) serta sertifikat keahlian pendukung yang relevan.</p>
       `;
     } else {
       notesEl.innerHTML = `
@@ -1385,7 +1393,7 @@ if (formElement) {
 // ================= INISIALISASI HALAMAN & NAVIGASI GULIR =================
 window.addEventListener('DOMContentLoaded', () => {
   if (isDeadlinePassed()) {
-    ['chiefStatusBadge', 'trainerStatusBadge'].forEach(badgeId => {
+    ['chiefStatusBadge', 'trainerStatusBadge', 'electricianStatusBadge', 'autolubeStatusBadge'].forEach(badgeId => {
       const statusBadge = document.getElementById(badgeId);
       if (statusBadge) {
         statusBadge.className = "text-[11px] font-extrabold px-3 py-1 rounded-lg bg-rose-100 text-rose-700 border border-rose-300";
