@@ -76,7 +76,7 @@ const jobQualifications = {
       "Batas waktu terakhir pendaftaran & pengiriman berkas: 05 Desember 2026.",
       "Jenis Kelamin: Khusus Laki-laki.",
       "Pendidikan min. SMK Ketenagalistrikan / Otomotif Elektronika.",
-      "Pengalaman min. 2 tahun sebagai Auto Electrician alat berat / DT tambang.",
+      "Pengalaman min. 3 tahun sebagai Auto Electrician alat berat / DT tambang.",
       "Mahir membaca diagram skematik perkabelan (wiring diagram).",
       "Paham sistem starting, alternator, sensor-sensor, & ECM."
     ]
@@ -89,7 +89,7 @@ const jobQualifications = {
       "Batas waktu terakhir pendaftaran & pengiriman berkas: 05 Desember 2026.",
       "Jenis Kelamin: Khusus Laki-laki.",
       "Pendidikan min. SMA / SMK Sederajat.",
-      "Berpengalaman menangani perbaikan sistem Autolube dan Fire Suppression (semua merk).",
+      "Pengalaman min. 3 tahun menangani perbaikan sistem Autolube dan Fire Suppression (semua merk).",
       "Diutamakan bersertifikat atau memiliki surat pengalaman kerja di bidang Autolube dan Fire Suppression.",
       "Lingkup kerja utama: perbaikan sistem Autolube dan Fire Suppression unit alat berat/DT, serta membantu pengerjaan Preventive Maintenance (PM) Service.",
       "Kepemilikan SIM bersifat opsional (menjadi nilai tambah)."
